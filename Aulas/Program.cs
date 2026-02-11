@@ -1,4 +1,6 @@
-﻿/*
+﻿// 1° AULA - 03/02 ===========================================================================================
+
+/*
 1° MODELO -----------------------------
 
 inicio:
@@ -267,8 +269,11 @@ class Program
 
 
 
+// 2° AULA - 10/02 =============================================================================================
 
-    using System;
+
+/* 1° MODELO ----------------------------  
+using System;
 
 class Program
 {
@@ -282,6 +287,63 @@ class Program
         }
     }
 }
+*/
+
+/* 2° MODELO ----------------------------
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numeros = new int[5];
+
+        for (int i = 0; i < numeros.Length; i++)
+        {
+            Console.Write("Digite um número: ");
+            numeros[i] = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("\nValores digitados:");
+
+        for (int i = 0; i < numeros.Length; i++)
+        {
+            Console.WriteLine("Posição " + (i + 1) + ": " + numeros[i]);
+        }
+
+        Console.WriteLine("\nDeseja fazer alguma alteração? S/N");
+        string alteracao = Console.ReadLine();
+
+        if (alteracao == "S")
+        {
+            Console.WriteLine("Qual índice deseja trocar?");
+            int indice = int.Parse(Console.ReadLine());
+
+            indice = indice - 1;
+
+            Console.WriteLine("Digite o novo valor:");
+            numeros[indice] = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\nValores atualizados:");
+
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                Console.WriteLine("Posição " + (i + 1) + ": " + numeros[i]);
+            }
+        }
+        else if( alteracao == "N")
+        {
+            for (int i = 0; i < numeros.Length; i++)
+        {
+            Console.WriteLine("Posição " + (i + 1) + ": " + numeros[i]);
+        }
+            Console.WriteLine("Tabela Finalida!");
+        }
+        
+    }
+}
+
+*/
 
 
 
