@@ -1,5 +1,5 @@
 ﻿/*
-1° MODELO -------------------
+1° MODELO -----------------------------
 
 inicio:
  Console.WriteLine("Escolha qual Operação Usar:");
@@ -74,7 +74,7 @@ switch(Decisao)
 
 
 
-/* 2° MODELO -------------------
+/* 2° MODELO -----------------------------
 
 using System;
 
@@ -139,6 +139,15 @@ switch (decisao)
 Console.WriteLine($"Resultado: {resultado}");
 */
 
+
+
+
+
+
+
+
+
+/* 3° MODELO -----------------------------
 /* 
 using System;
 
@@ -192,6 +201,13 @@ class Program
 
 
 
+
+
+
+
+
+
+/* 4° MODELO -----------------------------
 /*
 using System;
 
@@ -250,6 +266,8 @@ class Program
     */
 
 
+
+
     using System;
 
 class Program
@@ -260,7 +278,12 @@ class Program
 
         for(int i = 0; i< numeros.Length; i++)
         {
-            Console.WriteLine(numeros[i]);
+            Console.WriteLine("Posição: "+ numeros[i]);
         }
     }
 }
+
+
+
+
+
