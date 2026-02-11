@@ -1,7 +1,7 @@
 ﻿// 1° AULA - 03/02 ===========================================================================================
 
 /*
-1° MODELO -----------------------------
+1° MODELO --------------------------------------------------------------------------------------  
 
 inicio:
  Console.WriteLine("Escolha qual Operação Usar:");
@@ -68,15 +68,7 @@ switch(Decisao)
 */
 
 
-
-
-
-
-
-
-
-
-/* 2° MODELO -----------------------------
+/* 2° MODELO --------------------------------------------------------------------------------------  
 
 using System;
 
@@ -142,14 +134,7 @@ Console.WriteLine($"Resultado: {resultado}");
 */
 
 
-
-
-
-
-
-
-
-/* 3° MODELO -----------------------------
+/* 3° MODELO --------------------------------------------------------------------------------------  
 /* 
 using System;
 
@@ -202,15 +187,8 @@ class Program
 */
 
 
+/* 4° MODELO --------------------------------------------------------------------------------------  
 
-
-
-
-
-
-
-/* 4° MODELO -----------------------------
-/*
 using System;
 
 class Program
@@ -269,10 +247,27 @@ class Program
 
 
 
-// 2° AULA - 10/02 =============================================================================================
 
 
-/* 1° MODELO ----------------------------  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 2° AULA - 10/02 ===========================================================================
+
+
+/* 1° MODELO --------------------------------------------------------------------------------------  
 using System;
 
 class Program
@@ -289,7 +284,8 @@ class Program
 }
 */
 
-/* 2° MODELO ----------------------------
+
+/* 2° MODELO --------------------------------------------------------------------------------------  
 using System;
 
 class Program
@@ -344,6 +340,84 @@ class Program
 }
 
 */
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numeros = new int[5];
+
+        for (int i = 0; i < numeros.Length; i++)
+        {
+            bool valido = false;
+
+            while (valido == false)
+            {
+                Console.Write("Digite um número: ");
+                valido = int.TryParse(Console.ReadLine(), out numeros[i]);
+
+                if (valido == false)
+                {
+                    Console.WriteLine("Digite apenas números.");
+                }
+            }
+        }
+
+        Console.WriteLine("\nValores digitados:");
+        for (int i = 0; i < numeros.Length; i++)
+        {
+            Console.WriteLine("Posição " + (i + 1) + ": " + numeros[i]);
+        }
+
+        Console.WriteLine("\nDeseja alterar algum valor? S/N");
+        var resposta = Console.ReadLine();
+
+        if (resposta == "S")
+        {
+            int indice = 0;
+            bool indiceValido = false;
+
+            while (indiceValido == false)
+            {
+                Console.WriteLine("Qual posição deseja alterar? (1 a 5)");
+                indiceValido = int.TryParse(Console.ReadLine(), out indice);
+
+                if (indiceValido == false || indice < 1 || indice > 5)
+                {
+                    Console.WriteLine("Errado! Digite um número entre 1 e 5.");
+                    indiceValido = false;
+                }
+            }
+
+            indice = indice - 1;
+
+            bool novoValorValido = false;
+
+            while (novoValorValido == false)
+            {
+                Console.WriteLine("Digite o novo valor:");
+                novoValorValido = int.TryParse(Console.ReadLine(), out numeros[indice]);
+
+                if (novoValorValido == false)
+                {
+                    Console.WriteLine("Erro! Digite apenas números.");
+                }
+            }
+
+            Console.WriteLine("\nValores atualizados:");
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                Console.WriteLine("Posição " + (i + 1) + ": " + numeros[i]);
+            }
+        }
+
+        Console.WriteLine("\nPrograma finalizado.");
+        Console.ReadKey();
+    }
+}
 
 
 
