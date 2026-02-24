@@ -427,93 +427,127 @@ class Program
 
 //  4° MODELO --------------------------------------------------------------------------------------  
 
-using System;
+// using System;
 
-class Program
-{
-    static void Main()
-    {
-        int[] numeros = new int[5];
+// class Program
+// {
+//     static void Main()
+//     {
+//         int[] numeros = new int[5];
 
-        // Entrada dos números
-        for (int i = 0; i < 5; i++)
-        {
-            while (true)
-            {
-                try
-                {
-                    Console.Write("Digite um número: ");
-                    numeros[i] = int.Parse(Console.ReadLine());
-                    break; // sai do while se der certo
-                }
-                catch
-                {
-                    Console.WriteLine("Digite apenas números!");
-                }
-            }
-        }
+//         // Entrada dos números
+//         for (int i = 0; i < 5; i++)
+//         {
+//             while (true)
+//             {
+//                 try
+//                 {
+//                     Console.Write("Digite um número: ");
+//                     numeros[i] = int.Parse(Console.ReadLine());
+//                     break; // sai do while se der certo
+//                 }
+//                 catch
+//                 {
+//                     Console.WriteLine("Digite apenas números!");
+//                 }
+//             }
+//         }
 
-        // Mostrar valores
-        Console.WriteLine("\nValores digitados:");
-        for (int i = 0; i < 5; i++)
-        {
-            Console.WriteLine("Posição " + (i + 1) + ": " + numeros[i]);
-        }
+//         // Mostrar valores
+//         Console.WriteLine("\nValores digitados:");
+//         for (int i = 0; i < 5; i++)
+//         {
+//             Console.WriteLine("Posição " + (i + 1) + ": " + numeros[i]);
+//         }
 
-        // Perguntar se quer alterar
-        Console.WriteLine("\nDeseja alterar algum valor? (S/N)");
-        string resposta = Console.ReadLine();
+//         // Perguntar se quer alterar
+//         Console.WriteLine("\nDeseja alterar algum valor? (S/N)");
+//         string resposta = Console.ReadLine();
 
-        if (resposta.ToUpper() == "S")
-        {
-            int indice;
+//         if (resposta.ToUpper() == "S")
+//         {
+//             int indice;
 
-            while (true)
-            {
-                try
-                {
-                    Console.Write("Qual posição deseja alterar? (1 a 5): ");
-                    indice = int.Parse(Console.ReadLine());
+//             while (true)
+//             {
+//                 try
+//                 {
+//                     Console.Write("Qual posição deseja alterar? (1 a 5): ");
+//                     indice = int.Parse(Console.ReadLine());
 
-                    if (indice < 1 || indice > 5)
-                    {
-                        Console.WriteLine("Escolha entre 1 e 5.");
-                        continue;
-                    }
+//                     if (indice < 1 || indice > 5)
+//                     {
+//                         Console.WriteLine("Escolha entre 1 e 5.");
+//                         continue;
+//                     }
 
-                    break;
-                }
-                catch
-                {
-                    Console.WriteLine("Digite apenas números!");
-                }
-            }
+//                     break;
+//                 }
+//                 catch
+//                 {
+//                     Console.WriteLine("Digite apenas números!");
+//                 }
+//             }
 
-            while (true)
-            {
-                try
-                {
-                    Console.Write("Digite o novo valor: ");
-                    numeros[indice - 1] = int.Parse(Console.ReadLine());
-                    break;
-                }
-                catch
-                {
-                    Console.WriteLine("Digite apenas números!");
-                }
-            }
+//             while (true)
+//             {
+//                 try
+//                 {
+//                     Console.Write("Digite o novo valor: ");
+//                     numeros[indice - 1] = int.Parse(Console.ReadLine());
+//                     break;
+//                 }
+//                 catch
+//                 {
+//                     Console.WriteLine("Digite apenas números!");
+//                 }
+//             }
 
-            Console.WriteLine("\nValores atualizados:");
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine("Posição " + (i + 1) + ": " + numeros[i]);
-            }
-        }
+//             Console.WriteLine("\nValores atualizados:");
+//             for (int i = 0; i < 5; i++)
+//             {
+//                 Console.WriteLine("Posição " + (i + 1) + ": " + numeros[i]);
+//             }
+//         }
 
-        Console.WriteLine("\nPrograma finalizado.");
-        Console.ReadKey();
-    }
-}
+//         Console.WriteLine("\nPrograma finalizado.");
+//         Console.ReadKey();
+//     }
+// }
+
+
+// ==========================================================
+
+// using System;
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         int[,] numeros = new int[4, 6]
+//         {
+//             {1,2,3,4,5,6},
+//             {7,8,9,10,11,12},
+//             {13,14,15,16,17,18},
+//             {19,20,21,22,23,24}
+//         };
+
+//         for (int i = 0; i < 4; i++)
+//         {
+//             for (int j = 0; j < 6; j++)
+//             {
+//                 // Console.WriteLine("[" + i + "," + j + "] - " + numeros[i, j]);
+//                 if (numeros[i, j] == 16)
+//                 {
+//                     Console.WriteLine("Número 16 está na posição: [" + (i+1) + "," + (j+1) + "]!");
+//                     return;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
 
 
 
