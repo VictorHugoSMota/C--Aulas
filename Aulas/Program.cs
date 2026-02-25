@@ -516,7 +516,17 @@ class Program
 // }
 
 
-// ==========================================================
+
+
+
+
+
+
+
+
+
+
+// 4° AULA - 24/02 ===========================================================================
 
 // using System;
 
@@ -548,6 +558,134 @@ class Program
 // }
 
 
+using System;
 
+class Program
+{
+    static void Main()
+    {
+        int[,] matriz = new int[4, 6]
+        {
+            {1,2,3,4,5,6},
+            {7,8,9,10,11,12},
+            {13,14,15,16,17,18},
+            {19,20,21,22,23,24}
+        };
+
+    Console.WriteLine("==================");
+    Console.WriteLine("1 - Visualização");
+    Console.WriteLine("2 - Alteração");
+    Console.WriteLine("3 - Busca");
+    Console.WriteLine("4 - Sair");
+
+    Console.Write("Escolha uma opção: ");
+
+    if (!int.TryParse(Console.ReadLine(), out int opcao))
+    {
+        Console.WriteLine("Digite apenas números!");
+        return;
+    }
+
+    switch (opcao)
+    {
+    case 1:
+        Visualizacao(matriz);
+        break;
+
+    case 2:
+        Atualizacao(matriz);
+        break;
+
+    case 3:
+        Buscar(matriz);
+        break;
+
+    case 4:
+        Console.WriteLine("Saindo...");
+        break;
+
+    default:
+        Console.WriteLine("Opção inválida.");
+        break;
+    }
+    
+    }
+
+    static void Visualizacao(int[,] matriz)
+    {
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                Console.Write(matriz[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+
+    static void Atualizacao(int[,] matriz)
+{
+        Console.Write("Qual número deseja trocar? ");
+        int numero = int.Parse(Console.ReadLine());
+
+        bool encontrou = false;
+
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                if (matriz[i, j] == numero)
+                {
+                    Console.Write("Qual o novo valor? ");
+                    int atualizado = int.Parse(Console.ReadLine());
+
+                    matriz[i, j] = atualizado;
+                    encontrou = true;
+
+                    Console.WriteLine("Valor atualizado com sucesso!");
+                    return;
+                }
+            }
+        }
+
+        if (!encontrou)
+        {
+            Console.WriteLine("Número não encontrado na matriz!");
+        }
+    }
+
+    static void Buscar(int[,] matriz)
+    {
+        Console.WriteLine("Digite o valor da busca: ");
+        int busca = int.Parse(Console.ReadLine());
+
+        bool encontrou = false;
+
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                if(busca == matriz[i, j])
+                {
+                    encontrou = true;
+                    Console.WriteLine("Numero Encontrado!");
+                    return;
+                }
+
+            if (!encontrou)
+            {
+                Console.WriteLine("Número não encontrado na matriz!");
+            }
+
+            }
+            
+        }
+    }
+
+
+    
+
+}
 
 
