@@ -558,134 +558,137 @@ class Program
 // }
 
 
+// 
+
+// 5° Aula (Faltei) ==========================================================================================
+
 using System;
 
 class Program
 {
+    static int[] pilha = new int[5];
+
     static void Main()
     {
-        int[,] matriz = new int[4, 6]
+        int opcao;
+
+        do
         {
-            {1,2,3,4,5,6},
-            {7,8,9,10,11,12},
-            {13,14,15,16,17,18},
-            {19,20,21,22,23,24}
-        };
+            Console.WriteLine("\n----MENU PILHA---- ");
+            Console.WriteLine("1 - Push (Inserir no topo)");
+            Console.WriteLine("2 - Pop (Remover do topo)");
+            Console.WriteLine("3 - Peek (Consultar topo)");
+            Console.WriteLine("0 - Sair");
 
-    Console.WriteLine("==================");
-    Console.WriteLine("1 - Visualização");
-    Console.WriteLine("2 - Alteração");
-    Console.WriteLine("3 - Busca");
-    Console.WriteLine("4 - Sair");
+            opcao = LerOpcao();
 
-    Console.Write("Escolha uma opção: ");
-
-    if (!int.TryParse(Console.ReadLine(), out int opcao))
-    {
-        Console.WriteLine("Digite apenas números!");
-        return;
-    }
-
-    switch (opcao)
-    {
-    case 1:
-        Visualizacao(matriz);
-        break;
-
-    case 2:
-        Atualizacao(matriz);
-        break;
-
-    case 3:
-        Buscar(matriz);
-        break;
-
-    case 4:
-        Console.WriteLine("Saindo...");
-        break;
-
-    default:
-        Console.WriteLine("Opção inválida.");
-        break;
-    }
-    
-    }
-
-    static void Visualizacao(int[,] matriz)
-    {
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
+            switch (opcao)
             {
-                Console.Write(matriz[i, j] + " ");
-            }
-            Console.WriteLine();
-        }
-    }
-
-
-    static void Atualizacao(int[,] matriz)
-{
-        Console.Write("Qual número deseja trocar? ");
-        int numero = int.Parse(Console.ReadLine());
-
-        bool encontrou = false;
-
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                if (matriz[i, j] == numero)
-                {
-                    Console.Write("Qual o novo valor? ");
-                    int atualizado = int.Parse(Console.ReadLine());
-
-                    matriz[i, j] = atualizado;
-                    encontrou = true;
-
-                    Console.WriteLine("Valor atualizado com sucesso!");
-                    return;
-                }
-            }
-        }
-
-        if (!encontrou)
-        {
-            Console.WriteLine("Número não encontrado na matriz!");
-        }
-    }
-
-    static void Buscar(int[,] matriz)
-    {
-        Console.WriteLine("Digite o valor da busca: ");
-        int busca = int.Parse(Console.ReadLine());
-
-        bool encontrou = false;
-
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                if(busca == matriz[i, j])
-                {
-                    encontrou = true;
-                    Console.WriteLine("Numero Encontrado!");
-                    return;
-                }
-
-            if (!encontrou)
-            {
-                Console.WriteLine("Número não encontrado na matriz!");
+                case 1:
+                    Push();
+                    break;
+                case 2:
+                    Pop();
+                    break;
+                case 3:
+                    Peek();
+                    break;
+                case 0:
+                    Console.WriteLine("Encerrando...");
+                    break;
             }
 
-            }
-            
-        }
+        } while (opcao != 0);
     }
-
 
     
+    static int LerOpcao()
+    {
+        int opcao;
 
+        while (true)
+        {
+            Console.Write("Escolha uma opcao: ");
+
+            if (!int.TryParse(Console.ReadLine(), out opcao))
+            {
+                Console.WriteLine("Digite apenas numeros.");
+                continue;
+            }
+
+            if (opcao < 0 || opcao > 3)
+            {
+                Console.WriteLine("Escolha apenas entre 0 e 3.");
+                continue;
+            }
+
+            return opcao;
+        }
+    }
+
+    static void Push()
+    {
+        if (pilha[pilha.Length - 1] != 0)
+        {
+            Console.WriteLine("Pilha cheia, numero nao inserido");
+            return;
+        }
+
+        Console.Write("Digite um numero para inserir: ");
+        if (!int.TryParse(Console.ReadLine(), out int numero))
+        {
+            Console.WriteLine("Apenas numeros sao permitidos");
+            return;
+        }
+
+        for (int i = 0; i < pilha.Length; i++)
+        {
+            if (pilha[i] == numero)
+            {
+                Console.WriteLine("Numero já existe");
+                return;
+            }
+        }
+
+        for (int i = 0; i < pilha.Length; i++)
+        {
+            if (pilha[i] == 0)
+            {
+                pilha[i] = numero;
+                Console.WriteLine("Numero inserido");
+                return;
+            }
+        }
+    }
+
+    static void Pop()
+    {
+        for (int i = pilha.Length - 1; i >= 0; i--)
+        {
+            if (pilha[i] != 0)
+            {
+                Console.WriteLine("Removido: " + pilha[i]);
+                pilha[i] = 0;
+                return;
+            }
+        }
+
+        Console.WriteLine("Pilha vazia!");
+    }
+
+    static void Peek()
+    {
+        for (int i = pilha.Length - 1; i >= 0; i--)
+        {
+            if (pilha[i] != 0)
+            {
+                Console.WriteLine("Topo da pilha: " + pilha[i]);
+                return;
+            }
+        }
+
+        Console.WriteLine("Pilha vazia!");
+    }
 }
 
 
