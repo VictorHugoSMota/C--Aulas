@@ -1,5 +1,4 @@
 ﻿// 1° AULA - 03/02 ===========================================================================================
-
 /*
 1° MODELO --------------------------------------------------------------------------------------  
 
@@ -338,9 +337,7 @@ class Program
         
     }
 }
-
 */
-
 
 
 //  3° MODELO --------------------------------------------------------------------------------------  
@@ -420,9 +417,7 @@ class Program
 //         Console.WriteLine("\nPrograma finalizado.");
 //         Console.ReadKey();
 //     }
-
 // }
-
 
 
 //  4° MODELO --------------------------------------------------------------------------------------  
@@ -526,7 +521,7 @@ class Program
 
 
 
-// 4° AULA - 24/02 ===========================================================================
+// 3° AULA - 24/02 ===========================================================================
 
 // using System;
 
@@ -558,137 +553,159 @@ class Program
 // }
 
 
-// 
 
-// 5° Aula (Faltei) ==========================================================================================
 
-using System;
 
-class Program
-{
-    static int[] pilha = new int[5];
 
-    static void Main()
-    {
-        int opcao;
 
-        do
-        {
-            Console.WriteLine("\n----MENU PILHA---- ");
-            Console.WriteLine("1 - Push (Inserir no topo)");
-            Console.WriteLine("2 - Pop (Remover do topo)");
-            Console.WriteLine("3 - Peek (Consultar topo)");
-            Console.WriteLine("0 - Sair");
 
-            opcao = LerOpcao();
 
-            switch (opcao)
-            {
-                case 1:
-                    Push();
-                    break;
-                case 2:
-                    Pop();
-                    break;
-                case 3:
-                    Peek();
-                    break;
-                case 0:
-                    Console.WriteLine("Encerrando...");
-                    break;
-            }
 
-        } while (opcao != 0);
-    }
+// 4° Aula - 05/03 (Faltei) ==========================================================================================
+// FEITO NA AULA
+
+
+// using System;
+
+// class Program
+// {
+//     static int[] pilha = new int[5];
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n----MENU PILHA---- ");
+//             Console.WriteLine("1 - Push (Inserir no topo)");
+//             Console.WriteLine("2 - Pop (Remover do topo)");
+//             Console.WriteLine("3 - Peek (Consultar topo)");
+//             Console.WriteLine("0 - Sair");
+
+//             opcao = LerOpcao();
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     Push();
+//                     break;
+//                 case 2:
+//                     Pop();
+//                     break;
+//                 case 3:
+//                     Peek();
+//                     break;
+//                 case 0:
+//                     Console.WriteLine("Encerrando...");
+//                     break;
+//             }
+
+//         } while (opcao != 0);
+//     }
 
     
-    static int LerOpcao()
-    {
-        int opcao;
+//     static int LerOpcao()
+//     {
+//         int opcao;
 
-        while (true)
-        {
-            Console.Write("Escolha uma opcao: ");
+//         while (true)
+//         {
+//             Console.Write("Escolha uma opcao: ");
 
-            if (!int.TryParse(Console.ReadLine(), out opcao))
-            {
-                Console.WriteLine("Digite apenas numeros.");
-                continue;
-            }
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite apenas numeros.");
+//                 continue;
+//             }
 
-            if (opcao < 0 || opcao > 3)
-            {
-                Console.WriteLine("Escolha apenas entre 0 e 3.");
-                continue;
-            }
+//             if (opcao < 0 || opcao > 3)
+//             {
+//                 Console.WriteLine("Escolha apenas entre 0 e 3.");
+//                 continue;
+//             }
 
-            return opcao;
-        }
-    }
+//             return opcao;
+//         }
+//     }
 
-    static void Push()
-    {
-        if (pilha[pilha.Length - 1] != 0)
-        {
-            Console.WriteLine("Pilha cheia, numero nao inserido");
-            return;
-        }
+//     static void Push()
+//     {
+//         if (pilha[pilha.Length - 1] != 0)
+//         {
+//             Console.WriteLine("Pilha cheia, numero nao inserido");
+//             return;
+//         }
 
-        Console.Write("Digite um numero para inserir: ");
-        if (!int.TryParse(Console.ReadLine(), out int numero))
-        {
-            Console.WriteLine("Apenas numeros sao permitidos");
-            return;
-        }
+//         Console.Write("Digite um numero para inserir: ");
+//         if (!int.TryParse(Console.ReadLine(), out int numero))
+//         {
+//             Console.WriteLine("Apenas numeros sao permitidos");
+//             return;
+//         }
 
-        for (int i = 0; i < pilha.Length; i++)
-        {
-            if (pilha[i] == numero)
-            {
-                Console.WriteLine("Numero já existe");
-                return;
-            }
-        }
+//         for (int i = 0; i < pilha.Length; i++)
+//         {
+//             if (pilha[i] == numero)
+//             {
+//                 Console.WriteLine("Numero já existe");
+//                 return;
+//             }
+//         }
 
-        for (int i = 0; i < pilha.Length; i++)
-        {
-            if (pilha[i] == 0)
-            {
-                pilha[i] = numero;
-                Console.WriteLine("Numero inserido");
-                return;
-            }
-        }
-    }
+//         for (int i = 0; i < pilha.Length; i++)
+//         {
+//             if (pilha[i] == 0)
+//             {
+//                 pilha[i] = numero;
+//                 Console.WriteLine("Numero inserido");
+//                 return;
+//             }
+//         }
+//     }
 
-    static void Pop()
-    {
-        for (int i = pilha.Length - 1; i >= 0; i--)
-        {
-            if (pilha[i] != 0)
-            {
-                Console.WriteLine("Removido: " + pilha[i]);
-                pilha[i] = 0;
-                return;
-            }
-        }
+//     static void Pop()
+//     {
+//         for (int i = pilha.Length - 1; i >= 0; i--)
+//         {
+//             if (pilha[i] != 0)
+//             {
+//                 Console.WriteLine("Removido: " + pilha[i]);
+//                 pilha[i] = 0;
+//                 return;
+//             }
+//         }
 
-        Console.WriteLine("Pilha vazia!");
-    }
+//         Console.WriteLine("Pilha vazia!");
+//     }
 
-    static void Peek()
-    {
-        for (int i = pilha.Length - 1; i >= 0; i--)
-        {
-            if (pilha[i] != 0)
-            {
-                Console.WriteLine("Topo da pilha: " + pilha[i]);
-                return;
-            }
-        }
+//     static void Peek()
+//     {
+//         for (int i = pilha.Length - 1; i >= 0; i--)
+//         {
+//             if (pilha[i] != 0)
+//             {
+//                 Console.WriteLine("Topo da pilha: " + pilha[i]);
+//                 return;
+//             }
+//         }
 
-        Console.WriteLine("Pilha vazia!");
-    }
-}
+//         Console.WriteLine("Pilha vazia!");
+//     }
+// }
 
 
+// TAREFA DE CASA 03/03 (AULA 04) ---------------------------------------------------------------------------
+// 
+
+
+
+
+
+
+
+
+
+
+
+ // 5° Aula ==========================================================================================
