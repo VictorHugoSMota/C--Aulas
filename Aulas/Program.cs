@@ -562,7 +562,7 @@ class Program
 
 
 // 4° Aula - 05/03 (Faltei) ==========================================================================================
-// FEITO NA AULA
+// (PILHA)
 
 
 // using System;
@@ -696,7 +696,120 @@ class Program
 
 
 // TAREFA DE CASA 03/03 (AULA 04) ---------------------------------------------------------------------------
-// 
+//(FILA)
+
+//using System;
+// class Program
+// {
+//     static int[] fila = new int[10];
+//     static int fim = 0;
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             while (true)
+//             {
+//                 Console.WriteLine("\n=== MENU FILA ===");
+//                 Console.WriteLine("1 - ENQUEUE (Inserir na fila)");
+//                 Console.WriteLine("2 - DEQUEUE (Remover da fila)");
+//                 Console.WriteLine("3 - PEEK (Ver início da fila)");
+//                 Console.WriteLine("0 - Sair");
+//                 Console.Write("Escolha uma opção: ");
+
+//                 string entrada = Console.ReadLine();
+
+//                 if (int.TryParse(entrada, out opcao) && opcao >= 0 && opcao <= 3)
+//                     break;
+
+//                 Console.WriteLine("Opção inválida. Digite um número entre 0 e 3.");
+//             }
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     int valor;
+
+//                     while (true)
+//                     {
+//                         Console.Write("Digite um valor positivo: ");
+//                         string entradaValor = Console.ReadLine();
+
+//                         if (!int.TryParse(entradaValor, out valor))
+//                             Console.WriteLine("Digite apenas números.");
+//                         else if (valor < 0)
+//                             Console.WriteLine("Não são permitidos números negativos.");
+//                         else
+//                             break;
+//                     }
+
+//                     Enqueue(valor);
+//                     break;
+
+//                 case 2:
+//                     Dequeue();
+//                     break;
+
+//                 case 3:
+//                     Peek();
+//                     break;
+
+//                 case 0:
+//                     Console.WriteLine("Encerrando...");
+//                     break;
+//             }
+
+//         } while (opcao != 0);
+//     }
+
+//     static void Enqueue(int valor)
+//     {
+//         if (fim == fila.Length)
+//         {
+//             Console.WriteLine("Fila cheia.");
+//         }
+//         else
+//         {
+//             fila[fim] = valor;
+//             fim++;
+//             Console.WriteLine("Valor inserido na fila.");
+//         }
+//     }
+
+//     static void Dequeue()
+//     {
+//         if (fim == 0)
+//         {
+//             Console.WriteLine("Fila vazia.");
+//             return;
+//         }
+
+//         Console.WriteLine("Valor removido: " + fila[0]);
+
+        
+//         for (int i = 0; i < fim - 1; i++)
+//         {
+//             fila[i] = fila[i + 1];
+//         }
+
+//         fim--;
+//         fila[fim] = 0; 
+//     }
+
+//     static void Peek()
+//     {
+//         if (fim == 0)
+//         {
+//             Console.WriteLine("Fila vazia.");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Primeiro valor da fila: " + fila[0]);
+//         }
+//     }
+// }
 
 
 
@@ -708,4 +821,44 @@ class Program
 
 
 
- // 5° Aula ==========================================================================================
+ // 5° Aula - 10/03 ==========================================================================================
+ using System.Collections.Generic;
+
+public class Deck
+{
+    private LinkedList<int> deque = new LinkedList<int>();
+
+    public void AddFront(int valor)
+    {
+        deck.AddFirst(valor);
+    }
+
+    public void AddRear(int valor)
+    {
+        deck.AddLast(valor);
+    }
+
+    public int RemoveFront()
+    {
+        int valor = deque.First.Value;
+        deck.RemoveFirst();
+        return valor;
+    }
+
+    public int RemoveRear()
+    {
+        int valor = deque.Last.Value;
+        deck.RemoveLast();
+        return valor;
+    }
+
+    public int PeekFront()
+    {
+        return deck.First.Value;
+    }
+
+    public int PeekRear()
+    {
+        return deck.Last.Value;
+    }
+}
