@@ -822,43 +822,43 @@ class Program
 
 
  // 5° Aula - 10/03 ==========================================================================================
- using System.Collections.Generic;
+//  using System.Collections.Generic;
 
-public class Deck
-{
-    private LinkedList<int> deque = new LinkedList<int>();
+// public class Deck
+// {
+//     private LinkedList<int> deque = new LinkedList<int>();
 
-    public void AddFront(int valor)
-    {
-        deck.AddFirst(valor);
-    }
+//     public void AddFront(int valor)
+//     {
+//         deck.AddFirst(valor);
+//     }
 
-    public void AddRear(int valor)
-    {
-        deck.AddLast(valor);
-    }
+//     public void AddRear(int valor)
+//     {
+//         deck.AddLast(valor);
+//     }
 
-    public int RemoveFront()
-    {
-        int valor = deque.First.Value;
-        deck.RemoveFirst();
-        return valor;
-    }
+//     public int RemoveFront()
+//     {
+//         int valor = deque.First.Value;
+//         deck.RemoveFirst();
+//         return valor;
+//     }
 
-    public int RemoveRear()
-    {
-        int valor = deque.Last.Value;
-        deck.RemoveLast();
-        return valor;
-    }
+//     public int RemoveRear()
+//     {
+//         int valor = deque.Last.Value;
+//         deck.RemoveLast();
+//         return valor;
+//     }
 
-    public int PeekFront()
-    {
-        return deck.First.Value;
-    }
+//     public int PeekFront()
+//     {
+//         return deck.First.Value;
+//     }
 
-    public int PeekRear()
-    {
-        return deck.Last.Value;
-    }
-}
+//     public int PeekRear()
+//     {
+//         return deck.Last.Value;
+//     }
+// }
