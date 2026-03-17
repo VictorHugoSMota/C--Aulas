@@ -565,11 +565,147 @@ class Program
 // (PILHA)
 
 
+// using System;
+
+// class Program
+// {
+//     static int[] pilha = new int[5];
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n----MENU PILHA---- ");
+//             Console.WriteLine("1 - Push (Inserir no topo)");
+//             Console.WriteLine("2 - Pop (Remover do topo)");
+//             Console.WriteLine("3 - Peek (Consultar topo)");
+//             Console.WriteLine("0 - Sair");
+
+//             opcao = LerOpcao();
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     Push();
+//                     break;
+//                 case 2:
+//                     Pop();
+//                     break;
+//                 case 3:
+//                     Peek();
+//                     break;
+//                 case 0:
+//                     Console.WriteLine("Encerrando...");
+//                     break;
+//             }
+
+//         } while (opcao != 0);
+//     }
+
+    
+//     static int LerOpcao()
+//     {
+//         int opcao;
+
+//         while (true)
+//         {
+//             Console.Write("Escolha uma opcao: ");
+
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite apenas numeros.");
+//                 continue;
+//             }
+
+//             if (opcao < 0 || opcao > 3)
+//             {
+//                 Console.WriteLine("Escolha apenas entre 0 e 3.");
+//                 continue;
+//             }
+
+//             return opcao;
+//         }
+//     }
+
+//     static void Push()
+//     {
+//         if (pilha[pilha.Length - 1] != 0)
+//         {
+//             Console.WriteLine("Pilha cheia, numero nao inserido");
+//             return;
+//         }
+
+//         Console.Write("Digite um numero para inserir: ");
+//         if (!int.TryParse(Console.ReadLine(), out int numero))
+//         {
+//             Console.WriteLine("Apenas numeros sao permitidos");
+//             return;
+//         }
+
+//         for (int i = 0; i < pilha.Length; i++)
+//         {
+//             if (pilha[i] == numero)
+//             {
+//                 Console.WriteLine("Numero já existe");
+//                 return;
+//             }
+//         }
+
+//         for (int i = 0; i < pilha.Length; i++)
+//         {
+//             if (pilha[i] == 0)
+//             {
+//                 pilha[i] = numero;
+//                 Console.WriteLine("Numero inserido");
+//                 return;
+//             }
+//         }
+//     }
+
+//     static void Pop()
+//     {
+//         for (int i = pilha.Length - 1; i >= 0; i--)
+//         {
+//             if (pilha[i] != 0)
+//             {
+//                 Console.WriteLine("Removido: " + pilha[i]);
+//                 pilha[i] = 0;
+//                 return;
+//             }
+//         }
+
+//         Console.WriteLine("Pilha vazia!");
+//     }
+
+//     static void Peek()
+//     {
+//         for (int i = pilha.Length - 1; i >= 0; i--)
+//         {
+//             if (pilha[i] != 0)
+//             {
+//                 Console.WriteLine("Topo da pilha: " + pilha[i]);
+//                 return;
+//             }
+//         }
+
+//         Console.WriteLine("Pilha vazia!");
+//     }
+// }
+
+
+// CODIGO PARA ESTUDO
 using System;
 
 class Program
 {
+    // Array que representa a pilha
     static int[] pilha = new int[5];
+
+    // Variável que controla o topo da pilha
+    // Começa em -1 porque a pilha está vazia
+    static int topo = -1;
 
     static void Main()
     {
@@ -604,7 +740,7 @@ class Program
         } while (opcao != 0);
     }
 
-    
+    // Método para ler opção com validação
     static int LerOpcao()
     {
         int opcao;
@@ -629,70 +765,61 @@ class Program
         }
     }
 
+    // PUSH = inserir no topo
     static void Push()
     {
-        if (pilha[pilha.Length - 1] != 0)
+        // Verifica se a pilha está cheia
+        if (topo == pilha.Length - 1)
         {
-            Console.WriteLine("Pilha cheia, numero nao inserido");
+            Console.WriteLine("Pilha cheia!");
             return;
         }
 
-        Console.Write("Digite um numero para inserir: ");
+        Console.Write("Digite um numero: ");
         if (!int.TryParse(Console.ReadLine(), out int numero))
         {
-            Console.WriteLine("Apenas numeros sao permitidos");
+            Console.WriteLine("Apenas numeros!");
             return;
         }
 
-        for (int i = 0; i < pilha.Length; i++)
-        {
-            if (pilha[i] == numero)
-            {
-                Console.WriteLine("Numero já existe");
-                return;
-            }
-        }
+        // Sobe o topo
+        topo++;
 
-        for (int i = 0; i < pilha.Length; i++)
-        {
-            if (pilha[i] == 0)
-            {
-                pilha[i] = numero;
-                Console.WriteLine("Numero inserido");
-                return;
-            }
-        }
+        // Insere o valor na posição do topo
+        pilha[topo] = numero;
+
+        Console.WriteLine("Numero inserido!");
     }
 
+    // POP = remove do topo
     static void Pop()
     {
-        for (int i = pilha.Length - 1; i >= 0; i--)
+        // Verifica se está vazia
+        if (topo == -1)
         {
-            if (pilha[i] != 0)
-            {
-                Console.WriteLine("Removido: " + pilha[i]);
-                pilha[i] = 0;
-                return;
-            }
+            Console.WriteLine("Pilha vazia!");
+            return;
         }
 
-        Console.WriteLine("Pilha vazia!");
+        Console.WriteLine("Removido: " + pilha[topo]);
+
+        // "Remove" diminuindo o topo
+        topo--;
     }
 
+    // PEEK = ver o topo
     static void Peek()
     {
-        for (int i = pilha.Length - 1; i >= 0; i--)
+        if (topo == -1)
         {
-            if (pilha[i] != 0)
-            {
-                Console.WriteLine("Topo da pilha: " + pilha[i]);
-                return;
-            }
+            Console.WriteLine("Pilha vazia!");
+            return;
         }
 
-        Console.WriteLine("Pilha vazia!");
+        Console.WriteLine("Topo da pilha: " + pilha[topo]);
     }
 }
+
 
 
 // TAREFA DE CASA 03/03 (AULA 04) ---------------------------------------------------------------------------
