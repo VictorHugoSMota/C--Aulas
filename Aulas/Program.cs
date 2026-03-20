@@ -826,10 +826,8 @@ using System;
 
 class Program
 {
-    // Array que representa a fila
     static int[] fila = new int[5];
 
-    // Controle da fila
     static int inicio = 0;
     static int fim = -1;
 
@@ -866,7 +864,6 @@ class Program
         } while (opcao != 0);
     }
 
-    // Método para ler opção com validação
     static int LerOpcao()
     {
         int opcao;
@@ -891,10 +888,8 @@ class Program
         }
     }
 
-    // ENQUEUE = inserir no fim
     static void Enqueue()
     {
-        // Verifica se está cheia
         if (fim == fila.Length - 1)
         {
             Console.WriteLine("Fila cheia!");
@@ -908,19 +903,14 @@ class Program
             return;
         }
 
-        // Avança o fim
         fim++;
-
-        // Insere o valor
         fila[fim] = numero;
 
         Console.WriteLine("Numero inserido!");
     }
 
-    // DEQUEUE = remover do inicio
     static void Dequeue()
     {
-        // Verifica se está vazia
         if (inicio > fim)
         {
             Console.WriteLine("Fila vazia!");
@@ -928,12 +918,9 @@ class Program
         }
 
         Console.WriteLine("Removido: " + fila[inicio]);
-
-        // Avança o inicio
         inicio++;
     }
 
-    // FRONT = ver o inicio
     static void Front()
     {
         if (inicio > fim)
