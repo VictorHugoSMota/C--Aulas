@@ -700,11 +700,8 @@ class Program
 
 // class Program
 // {
-//     // Array que representa a pilha
 //     static int[] pilha = new int[5];
 
-//     // Variável que controla o topo da pilha
-//     // Começa em -1 porque a pilha está vazia
 //     static int topo = -1;
 
 //     static void Main()
@@ -740,7 +737,6 @@ class Program
 //         } while (opcao != 0);
 //     }
 
-//     // Método para ler opção com validação
 //     static int LerOpcao()
 //     {
 //         int opcao;
@@ -765,10 +761,8 @@ class Program
 //         }
 //     }
 
-//     // PUSH = inserir no topo
 //     static void Push()
 //     {
-//         // Verifica se a pilha está cheia
 //         if (topo == pilha.Length - 1)
 //         {
 //             Console.WriteLine("Pilha cheia!");
@@ -782,19 +776,14 @@ class Program
 //             return;
 //         }
 
-//         // Sobe o topo
 //         topo++;
-
-//         // Insere o valor na posição do topo
 //         pilha[topo] = numero;
 
 //         Console.WriteLine("Numero inserido!");
 //     }
 
-//     // POP = remove do topo
 //     static void Pop()
 //     {
-//         // Verifica se está vazia
 //         if (topo == -1)
 //         {
 //             Console.WriteLine("Pilha vazia!");
@@ -802,12 +791,9 @@ class Program
 //         }
 
 //         Console.WriteLine("Removido: " + pilha[topo]);
-
-//         // "Remove" diminuindo o topo
 //         topo--;
 //     }
 
-//     // PEEK = ver o topo
 //     static void Peek()
 //     {
 //         if (topo == -1)
