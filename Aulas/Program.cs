@@ -695,17 +695,143 @@ class Program
 // }
 
 
-// CODIGO PARA ESTUDO
+// CODIGO PARA ESTUDO (PILHA)
+// using System;
+
+// class Program
+// {
+//     // Array que representa a pilha
+//     static int[] pilha = new int[5];
+
+//     // Variável que controla o topo da pilha
+//     // Começa em -1 porque a pilha está vazia
+//     static int topo = -1;
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n----MENU PILHA---- ");
+//             Console.WriteLine("1 - Push (Inserir no topo)");
+//             Console.WriteLine("2 - Pop (Remover do topo)");
+//             Console.WriteLine("3 - Peek (Consultar topo)");
+//             Console.WriteLine("0 - Sair");
+
+//             opcao = LerOpcao();
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     Push();
+//                     break;
+//                 case 2:
+//                     Pop();
+//                     break;
+//                 case 3:
+//                     Peek();
+//                     break;
+//                 case 0:
+//                     Console.WriteLine("Encerrando...");
+//                     break;
+//             }
+
+//         } while (opcao != 0);
+//     }
+
+//     // Método para ler opção com validação
+//     static int LerOpcao()
+//     {
+//         int opcao;
+
+//         while (true)
+//         {
+//             Console.Write("Escolha uma opcao: ");
+
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite apenas numeros.");
+//                 continue;
+//             }
+
+//             if (opcao < 0 || opcao > 3)
+//             {
+//                 Console.WriteLine("Escolha apenas entre 0 e 3.");
+//                 continue;
+//             }
+
+//             return opcao;
+//         }
+//     }
+
+//     // PUSH = inserir no topo
+//     static void Push()
+//     {
+//         // Verifica se a pilha está cheia
+//         if (topo == pilha.Length - 1)
+//         {
+//             Console.WriteLine("Pilha cheia!");
+//             return;
+//         }
+
+//         Console.Write("Digite um numero: ");
+//         if (!int.TryParse(Console.ReadLine(), out int numero))
+//         {
+//             Console.WriteLine("Apenas numeros!");
+//             return;
+//         }
+
+//         // Sobe o topo
+//         topo++;
+
+//         // Insere o valor na posição do topo
+//         pilha[topo] = numero;
+
+//         Console.WriteLine("Numero inserido!");
+//     }
+
+//     // POP = remove do topo
+//     static void Pop()
+//     {
+//         // Verifica se está vazia
+//         if (topo == -1)
+//         {
+//             Console.WriteLine("Pilha vazia!");
+//             return;
+//         }
+
+//         Console.WriteLine("Removido: " + pilha[topo]);
+
+//         // "Remove" diminuindo o topo
+//         topo--;
+//     }
+
+//     // PEEK = ver o topo
+//     static void Peek()
+//     {
+//         if (topo == -1)
+//         {
+//             Console.WriteLine("Pilha vazia!");
+//             return;
+//         }
+
+//         Console.WriteLine("Topo da pilha: " + pilha[topo]);
+//     }
+// }
+
+
+// CODIGO PARA ESTUDO ( FILA )
 using System;
 
 class Program
 {
-    // Array que representa a pilha
-    static int[] pilha = new int[5];
+    // Array que representa a fila
+    static int[] fila = new int[5];
 
-    // Variável que controla o topo da pilha
-    // Começa em -1 porque a pilha está vazia
-    static int topo = -1;
+    // Controle da fila
+    static int inicio = 0;
+    static int fim = -1;
 
     static void Main()
     {
@@ -713,10 +839,10 @@ class Program
 
         do
         {
-            Console.WriteLine("\n----MENU PILHA---- ");
-            Console.WriteLine("1 - Push (Inserir no topo)");
-            Console.WriteLine("2 - Pop (Remover do topo)");
-            Console.WriteLine("3 - Peek (Consultar topo)");
+            Console.WriteLine("\n----MENU FILA---- ");
+            Console.WriteLine("1 - Enqueue (Inserir)");
+            Console.WriteLine("2 - Dequeue (Remover)");
+            Console.WriteLine("3 - Front (Consultar inicio)");
             Console.WriteLine("0 - Sair");
 
             opcao = LerOpcao();
@@ -724,13 +850,13 @@ class Program
             switch (opcao)
             {
                 case 1:
-                    Push();
+                    Enqueue();
                     break;
                 case 2:
-                    Pop();
+                    Dequeue();
                     break;
                 case 3:
-                    Peek();
+                    Front();
                     break;
                 case 0:
                     Console.WriteLine("Encerrando...");
@@ -765,13 +891,13 @@ class Program
         }
     }
 
-    // PUSH = inserir no topo
-    static void Push()
+    // ENQUEUE = inserir no fim
+    static void Enqueue()
     {
-        // Verifica se a pilha está cheia
-        if (topo == pilha.Length - 1)
+        // Verifica se está cheia
+        if (fim == fila.Length - 1)
         {
-            Console.WriteLine("Pilha cheia!");
+            Console.WriteLine("Fila cheia!");
             return;
         }
 
@@ -782,45 +908,43 @@ class Program
             return;
         }
 
-        // Sobe o topo
-        topo++;
+        // Avança o fim
+        fim++;
 
-        // Insere o valor na posição do topo
-        pilha[topo] = numero;
+        // Insere o valor
+        fila[fim] = numero;
 
         Console.WriteLine("Numero inserido!");
     }
 
-    // POP = remove do topo
-    static void Pop()
+    // DEQUEUE = remover do inicio
+    static void Dequeue()
     {
         // Verifica se está vazia
-        if (topo == -1)
+        if (inicio > fim)
         {
-            Console.WriteLine("Pilha vazia!");
+            Console.WriteLine("Fila vazia!");
             return;
         }
 
-        Console.WriteLine("Removido: " + pilha[topo]);
+        Console.WriteLine("Removido: " + fila[inicio]);
 
-        // "Remove" diminuindo o topo
-        topo--;
+        // Avança o inicio
+        inicio++;
     }
 
-    // PEEK = ver o topo
-    static void Peek()
+    // FRONT = ver o inicio
+    static void Front()
     {
-        if (topo == -1)
+        if (inicio > fim)
         {
-            Console.WriteLine("Pilha vazia!");
+            Console.WriteLine("Fila vazia!");
             return;
         }
 
-        Console.WriteLine("Topo da pilha: " + pilha[topo]);
+        Console.WriteLine("Inicio da fila: " + fila[inicio]);
     }
 }
-
-
 
 // TAREFA DE CASA 03/03 (AULA 04) ---------------------------------------------------------------------------
 //(FILA)
