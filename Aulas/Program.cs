@@ -808,116 +808,116 @@ class Program
 
 
 // CODIGO PARA ESTUDO ( FILA )
-using System;
+// using System;
 
-class Program
-{
-    static int[] fila = new int[5];
+// class Program
+// {
+//     static int[] fila = new int[5];
 
-    static int inicio = 0;
-    static int fim = -1;
+//     static int inicio = 0;
+//     static int fim = -1;
 
-    static void Main()
-    {
-        int opcao;
+//     static void Main()
+//     {
+//         int opcao;
 
-        do
-        {
-            Console.WriteLine("\n----MENU FILA---- ");
-            Console.WriteLine("1 - Enqueue (Inserir)");
-            Console.WriteLine("2 - Dequeue (Remover)");
-            Console.WriteLine("3 - Front (Consultar inicio)");
-            Console.WriteLine("0 - Sair");
+//         do
+//         {
+//             Console.WriteLine("\n----MENU FILA---- ");
+//             Console.WriteLine("1 - Enqueue (Inserir)");
+//             Console.WriteLine("2 - Dequeue (Remover)");
+//             Console.WriteLine("3 - Front (Consultar inicio)");
+//             Console.WriteLine("0 - Sair");
 
-            opcao = LerOpcao();
+//             opcao = LerOpcao();
 
-            switch (opcao)
-            {
-                case 1:
-                    Enqueue();
-                    break;
-                case 2:
-                    Dequeue();
-                    break;
-                case 3:
-                    Front();
-                    break;
-                case 0:
-                    Console.WriteLine("Encerrando...");
-                    break;
-            }
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     Enqueue();
+//                     break;
+//                 case 2:
+//                     Dequeue();
+//                     break;
+//                 case 3:
+//                     Front();
+//                     break;
+//                 case 0:
+//                     Console.WriteLine("Encerrando...");
+//                     break;
+//             }
 
-        } while (opcao != 0);
-    }
+//         } while (opcao != 0);
+//     }
 
-    static int LerOpcao()
-    {
-        int opcao;
+//     static int LerOpcao()
+//     {
+//         int opcao;
 
-        while (true)
-        {
-            Console.Write("Escolha uma opcao: ");
+//         while (true)
+//         {
+//             Console.Write("Escolha uma opcao: ");
 
-            if (!int.TryParse(Console.ReadLine(), out opcao))
-            {
-                Console.WriteLine("Digite apenas numeros.");
-                continue;
-            }
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite apenas numeros.");
+//                 continue;
+//             }
 
-            if (opcao < 0 || opcao > 3)
-            {
-                Console.WriteLine("Escolha apenas entre 0 e 3.");
-                continue;
-            }
+//             if (opcao < 0 || opcao > 3)
+//             {
+//                 Console.WriteLine("Escolha apenas entre 0 e 3.");
+//                 continue;
+//             }
 
-            return opcao;
-        }
-    }
+//             return opcao;
+//         }
+//     }
 
-    static void Enqueue()
-    {
-        if (fim == fila.Length - 1)
-        {
-            Console.WriteLine("Fila cheia!");
-            return;
-        }
+//     static void Enqueue()
+//     {
+//         if (fim == fila.Length - 1)
+//         {
+//             Console.WriteLine("Fila cheia!");
+//             return;
+//         }
 
-        Console.Write("Digite um numero: ");
-        if (!int.TryParse(Console.ReadLine(), out int numero))
-        {
-            Console.WriteLine("Apenas numeros!");
-            return;
-        }
+//         Console.Write("Digite um numero: ");
+//         if (!int.TryParse(Console.ReadLine(), out int numero))
+//         {
+//             Console.WriteLine("Apenas numeros!");
+//             return;
+//         }
 
-        fim++;
-        fila[fim] = numero;
+//         fim++;
+//         fila[fim] = numero;
 
-        Console.WriteLine("Numero inserido!");
-    }
+//         Console.WriteLine("Numero inserido!");
+//     }
 
-    static void Dequeue()
-    {
-        if (inicio > fim)
-        {
-            Console.WriteLine("Fila vazia!");
-            return;
-        }
+//     static void Dequeue()
+//     {
+//         if (inicio > fim)
+//         {
+//             Console.WriteLine("Fila vazia!");
+//             return;
+//         }
 
-        Console.WriteLine("Removido: " + fila[inicio]);
-        inicio++;
-    }
+//         Console.WriteLine("Removido: " + fila[inicio]);
+//         inicio++;
+//     }
 
-    static void Front()
-    {
-        if (inicio > fim)
-        {
-            Console.WriteLine("Fila vazia!");
-            return;
-        }
+//     static void Front()
+//     {
+//         if (inicio > fim)
+//         {
+//             Console.WriteLine("Fila vazia!");
+//             return;
+//         }
 
-        Console.WriteLine("Inicio da fila: " + fila[inicio]);
-    }
-}
+//         Console.WriteLine("Inicio da fila: " + fila[inicio]);
+//     }
+// }
 
 // TAREFA DE CASA 03/03 (AULA 04) ---------------------------------------------------------------------------
 //(FILA)
@@ -1086,3 +1086,158 @@ class Program
 //         return deck.Last.Value;
 //     }
 // }
+
+
+
+
+
+
+
+
+
+
+ // 6° Aula - 24/03 ==========================================================================================
+
+// using System;
+
+// class Program
+// {
+//     static int HashFunction(int key, int tableSize)
+//     {
+//         return key % tableSize;
+//     }
+
+//     static void InserirValor(int[] tabela, int key, int tableSize)
+//     {
+//         int pos = HashFunction(key, tableSize);
+
+//         while (tabela[pos] != 0)
+//         {
+//             pos = (pos + 1) % tableSize;
+//         }
+
+//         tabela[pos] = key;
+//     }
+
+//     static void Main()
+//     {
+//         int tamanho = 5;
+//         int[] tabela = new int[tamanho];
+
+//         int[] valores = { 10, 22, 31, 4, 15 };
+
+//         foreach (int v in valores)
+//         {
+//             InserirValor(tabela, v, tamanho);
+//         }
+
+//         for (int i = 0; i < tamanho; i++)
+//         {
+//             Console.WriteLine($"[{i}] = {tabela[i]}");
+//         }
+//     }
+// }
+
+
+// using System;
+// class Program
+// {
+
+// int HashFunction (int key, int tableSize)
+//     {
+//         return key % tableSize;
+//     }
+
+// static void InseriValor()
+// {
+    
+// }
+// }
+
+
+// aoaoa
+// using System;
+
+// class Carro{
+    
+// }
+
+// class Program
+// {
+//     static int tableSize = 5;
+//     static int[] tabela = new int[tableSize];
+
+//     static int HashFunction(int key, int tableSize)
+//     {
+//         return key % tableSize;
+//     }
+
+//     static void InserirValor(int key)
+//     {
+//         int pos = HashFunction(key, tableSize);
+
+//         tabela[pos] = key;
+//     }
+
+//     static void Main()
+//     {
+//         InserirValor(10);
+//         InserirValor(22);
+//         InserirValor(31);
+//         InserirValor(40);
+
+//         for (int i = 0; i < tableSize; i++)
+//         {
+//             Console.WriteLine($"[{i}] = {tabela[i]}");
+//         }
+//     }
+// }
+
+
+using System;
+class Carro
+{
+    public int Id;
+    public string Modelo;
+
+    public Carro(int id, string modelo)
+    {
+        Id = id;
+        Modelo = modelo;
+    }
+}
+
+class Program
+{
+    static int tableSize = 5;
+    static Carro[] tabela = new Carro[tableSize];
+
+    static int HashFunction(int key, int tableSize)
+    {
+        return key % tableSize;
+    }
+
+    static void InserirCarro(Carro carro)
+    {
+        int pos = HashFunction(carro.Id, tableSize);
+
+        tabela[pos] = carro;
+    }
+
+    static void Main()
+    {
+        InserirCarro(new Carro(10, "Civic"));
+        InserirCarro(new Carro(22, "Corolla"));
+        InserirCarro(new Carro(31, "HB20"));
+        InserirCarro(new Carro(4, "Gol"));
+        InserirCarro(new Carro(15, "Onix"));
+
+        for (int i = 0; i < tableSize; i++)
+        {
+            if (tabela[i] != null)
+                Console.WriteLine($"[{i}] = {tabela[i].Id} - {tabela[i].Modelo}");
+            else
+                Console.WriteLine($"[{i}] = vazio");
+        }
+    }
+}
