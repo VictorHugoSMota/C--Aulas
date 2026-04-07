@@ -1098,6 +1098,9 @@ class Program
 
  // 6° Aula - 24/03 ==========================================================================================
 
+
+//  1° MODELO --------------------------------------------------------------------------------------  
+
 // using System;
 
 // class Program
@@ -1139,6 +1142,8 @@ class Program
 // }
 
 
+//  2° MODELO --------------------------------------------------------------------------------------  
+
 // using System;
 // class Program
 // {
@@ -1155,7 +1160,8 @@ class Program
 // }
 
 
-// aoaoa
+//  3° MODELO --------------------------------------------------------------------------------------
+
 // using System;
 
 // class Carro{
@@ -1194,50 +1200,71 @@ class Program
 // }
 
 
+//  4° MODELO --------------------------------------------------------------------------------------  
+
+// using System;
+// class Carro
+// {
+//     public int Id;
+//     public string Modelo;
+
+//     public Carro(int id, string modelo)
+//     {
+//         Id = id;
+//         Modelo = modelo;
+//     }
+// }
+
+// class Program
+// {
+//     static int tableSize = 5;
+//     static Carro[] tabela = new Carro[tableSize];
+
+//     static int HashFunction(int key, int tableSize)
+//     {
+//         return key % tableSize;
+//     }
+
+//     static void InserirCarro(Carro carro)
+//     {
+//         int pos = HashFunction(carro.Id, tableSize);
+
+//         tabela[pos] = carro;
+//     }
+
+//     static void Main()
+//     {
+//         InserirCarro(new Carro(10, "Civic"));
+//         InserirCarro(new Carro(22, "Corolla"));
+//         InserirCarro(new Carro(31, "HB20"));
+//         InserirCarro(new Carro(4, "Gol"));
+//         InserirCarro(new Carro(15, "Onix"));
+
+//         for (int i = 0; i < tableSize; i++)
+//         {
+//             if (tabela[i] != null)
+//                 Console.WriteLine($"[{i}] = {tabela[i].Id} - {tabela[i].Modelo}");
+//             else
+//                 Console.WriteLine($"[{i}] = vazio");
+//         }
+//     }
+// }
+
+// 7° Aula - 31/03 ==========================================================================================
+
+
+
+
+
+// 8° Aula - 07/04 ==========================================================================================
+
 using System;
-class Carro
-{
-    public int Id;
-    public string Modelo;
-
-    public Carro(int id, string modelo)
-    {
-        Id = id;
-        Modelo = modelo;
-    }
-}
-
+using Microsoft.VisualBasic;
 class Program
 {
-    static int tableSize = 5;
-    static Carro[] tabela = new Carro[tableSize];
+    var numeros = new HashSet<int> {1,2,3,4,5,6,7,8,9,10};
 
-    static int HashFunction(int key, int tableSize)
-    {
-        return key % tableSize;
-    }
 
-    static void InserirCarro(Carro carro)
-    {
-        int pos = HashFunction(carro.Id, tableSize);
-
-        tabela[pos] = carro;
-    }
-
-    static void Main()
-    {
-        InserirCarro(new Carro(10, "Civic"));
-        InserirCarro(new Carro(22, "Corolla"));
-        InserirCarro(new Carro(31, "HB20"));
-        InserirCarro(new Carro(4, "Gol"));
-        InserirCarro(new Carro(15, "Onix"));
-
-        for (int i = 0; i < tableSize; i++)
-        {
-            if (tabela[i] != null)
-                Console.WriteLine($"[{i}] = {tabela[i].Id} - {tabela[i].Modelo}");
-            else
-                Console.WriteLine($"[{i}] = vazio");
-        }
-    }
+    Var lista = new List<int> {1,2,2,3,3,4};
+    Var ConjutnoUnico = new HashSet<int> {List};
 }
