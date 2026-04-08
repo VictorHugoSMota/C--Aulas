@@ -1250,7 +1250,695 @@ class Program
 //     }
 // }
 
-// 7° Aula - 31/03 ==========================================================================================
+// 7° Aula - 31/03 (FALTEI) ==========================================================================================
+
+
+//  1° MODELO -------------------------------------------------------------------------------------- 
+
+// using System;
+
+// class Aluno
+// {
+//     public int Matricula;
+//     public string Nome;
+
+//     public Aluno(int Matricula, string Nome)
+//     {
+//         Matricula = matricula;
+//         Nome = nome;
+//     }
+// }
+
+// class Program
+// {
+//     static int tableSize = 5;
+//     static Aluno[] tabela = new Aluno[tableSize];
+//     static bool[] removido = new bool[tableSize];
+
+//     static int HashFunction(int key)
+//     {
+//         return key % tableSize;
+//     }
+
+    
+//     static void InserirAluno()
+//     {
+//         Console.Write("Matricula: ");
+//         int matricula = int.Parse(Console.ReadLine());
+
+//         Console.Write("Nome: ");
+//         string nome = Console.ReadLine();
+
+//         int pos = HashFunction(id);
+//         int i = 0;
+
+//         while (tabela[pos] != null && !removido[pos])
+//         {
+//             i++;
+//             pos = (HashFunction(matricula) + i) % tableSize;
+
+//             if (i >= tableSize)
+//             {
+//                 Console.WriteLine("Tabela cheia!");
+//                 return;
+//             }
+//         }
+
+//         tabela[pos] = new Aluno(matricula, nome);
+//         removido[pos] = false;
+
+//         Console.WriteLine("Aluno inserido com sucesso");
+//     }
+
+    
+//     static void Listar()
+//     {
+//         Console.WriteLine("\n--- TABELA HASH ---");
+
+//         for (int i = 0; i < tableSize; i++)
+//         {
+//             if (tabela[i] != null && !removido[i])
+//                 Console.WriteLine("[" + i + "] = " + tabela[i].Matricula + " - " + tabela[i].Nome);
+//             else
+//                 Console.WriteLine("[" + i + "] = vazio");
+//         }
+//     }
+
+   
+//     static void Remover()
+//     {
+//         Console.Write("Digite a matricula para remover: ");
+//         int matricula = int.Parse(Console.ReadLine());
+
+//         int pos = HashFunction(id);
+//         int i = 0;
+
+//         while (tabela[pos] != null)
+//         {
+//             if (tabela[pos].Matricula == matricula && !removido[pos])
+//             {
+//                 removido[pos] = true; /
+//                 Console.WriteLine("Aluno removido!");
+//                 return;
+//             }
+
+//             i++;
+//             pos = (HashFunction(id) + i) % tableSize;
+
+//             if (i >= tableSize)
+//                 break;
+//         }
+
+//         Console.WriteLine("Aluno não encontrado");
+//     }
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - Inserir aluno");
+//             Console.WriteLine("2 - Listar alunos");
+//             Console.WriteLine("3 - Remover aluno");
+//             Console.WriteLine("4 - Sair");
+//             Console.Write("Escolha: ");
+
+//             opcao = int.Parse(Console.ReadLine());
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     InserirCarro();
+//                     break;
+
+//                 case 2:
+//                     Listar();
+//                     break;
+
+//                 case 3:
+//                     Remover();
+//                     break;
+
+//                 case 4:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
+
+//         } while (opcao != 4);
+//     }
+// }
+
+
+//  2° MODELO -------------------------------------------------------------------------------------- 
+
+// using System;
+
+// class Aluno
+// {
+//     public int Matricula;
+//     public string Nome;
+
+//     public Aluno(int matricula, string nome)
+//     {
+//         this.Matricula = matricula;
+//         this.Nome = nome;
+//     }
+// }
+
+// class Program
+// {
+//     static int tableSize = 5;
+//     static Aluno[] tabela = new Aluno[tableSize];
+//     static bool[] removido = new bool[tableSize];
+
+//     static int HashFunction(int key)
+//     {
+//         return key % tableSize;
+//     }
+
+    
+//     static void InserirAluno()
+//     {
+//         Console.Write("Matricula: ");
+//         int matricula = int.Parse(Console.ReadLine());
+
+//         Console.Write("Nome: ");
+//         string nome = Console.ReadLine();
+
+//         int pos = HashFunction(matricula);
+//         int i = 0;
+
+//         while (tabela[pos] != null && !removido[pos])
+//         {
+//             i++;
+//             pos = (HashFunction(matricula) + i) % tableSize;
+
+//             if (i >= tableSize)
+//             {
+//                 Console.WriteLine("Tabela cheia!");
+//                 return;
+//             }
+//         }
+
+//         tabela[pos] = new Aluno(matricula, nome);
+//         removido[pos] = false;
+
+//         Console.WriteLine("Aluno inserido com sucesso");
+//     }
+
+    
+//     static void Listar()
+//     {
+//         Console.WriteLine("\n--- TABELA HASH ---");
+
+//         for (int i = 0; i < tableSize; i++)
+//         {
+//             if (tabela[i] != null && !removido[i])
+//                 Console.WriteLine("[" + i + "] = " + tabela[i].Matricula + " - " + tabela[i].Nome);
+//             else
+//                 Console.WriteLine("[" + i + "] = vazio");
+//         }
+//     }
+
+   
+//     static void Remover()
+//     {
+//         Console.Write("Digite a matricula para remover: ");
+//         int matricula = int.Parse(Console.ReadLine());
+
+//         int pos = HashFunction(matricula);
+//         int i = 0;
+
+//         while (tabela[pos] != null)
+//         {
+//             if (tabela[pos].Matricula == matricula && !removido[pos])
+//             {
+//                 removido[pos] = true; 
+//                 Console.WriteLine("Aluno removido!");
+//                 return;
+//             }
+
+//             i++;
+//             pos = (HashFunction(matricula) + i) % tableSize;
+
+//             if (i >= tableSize)
+//                 break;
+//         }
+
+//         Console.WriteLine("Aluno não encontrado");
+//     }
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - Inserir aluno");
+//             Console.WriteLine("2 - Listar alunos");
+//             Console.WriteLine("3 - Remover aluno");
+//             Console.WriteLine("4 - Sair");
+//             Console.Write("Escolha: ");
+
+//             opcao = int.Parse(Console.ReadLine());
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     InserirAluno();
+//                     break;
+
+//                 case 2:
+//                     Listar();
+//                     break;
+
+//                 case 3:
+//                     Remover();
+//                     break;
+
+//                 case 4:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
+
+//         } while (opcao != 4);
+//     }
+// }
+
+
+//  3° MODELO -------------------------------------------------------------------------------------- 
+
+// using System;
+
+// class Aluno
+// {
+//     public int Matricula;
+//     public string Nome;
+
+//     public Aluno(int matricula, string nome)
+//     {
+//         this.Matricula = matricula;
+//         this.Nome = nome;
+//     }
+// }
+
+// class Program
+// {
+//     static int tableSize = 100;
+//     static Aluno[] tabela = new Aluno[tableSize];
+//     static bool[] removido = new bool[tableSize];
+
+//     static int HashFunction(int key)
+//     {
+//         return key % tableSize;
+//     }
+
+//     // funcao para contar quantos alunos tem na tabela para saber se esta acima de 70
+//     static int QuantidadeElementos()
+//     {
+//         int count = 0;
+
+//         for (int i = 0; i < tableSize; i++)
+//         {
+//             if (tabela[i] != null && !removido[i])
+//                 count++;
+//         }
+
+//         return count;
+//     }
+
+//     // funcao que define se é quadratico ou linear, usada no metodos inseriraluno
+//     static int ProximaPosicao(int matricula, int i)
+//     {
+//         double fatorCarga = (double)QuantidadeElementos() / tableSize;
+
+//         if (fatorCarga >= 0.7) // quadratico
+//             return (HashFunction(matricula) + i * i) % tableSize;
+//         else 
+//             return (HashFunction(matricula) + i) % tableSize; // linear
+//     }
+
+//     static bool ExisteMatricula(int matricula)
+//     {
+//         int pos = HashFunction(matricula);
+//         int i = 0;
+
+//         while (tabela[pos] != null)
+//         {
+//             if (tabela[pos].Matricula == matricula && !removido[pos])
+//             {
+//                 return true;
+//             }
+
+//             i++;
+//             pos = ProximaPosicao(matricula, i); // funcao que define se é quadratico ou linear
+
+//             if (i >= tableSize)
+//                 break;
+//         }
+
+//         return false;
+//     }
+
+//     static void InserirAluno()
+//     {
+//         Console.Write("Matricula: ");
+//         int matricula = int.Parse(Console.ReadLine());
+
+//         if (ExisteMatricula(matricula))
+//         {
+//             Console.WriteLine("Erro: matricula ja cadastrada");
+//             return;
+//         }
+
+//         Console.Write("Nome: ");
+//         string nome = Console.ReadLine();
+
+//         int pos = HashFunction(matricula);
+//         int i = 0;
+
+//         while (tabela[pos] != null && !removido[pos])
+//         {
+//             i++;
+//             pos = ProximaPosicao(matricula, i); // funcao que define se e quadratico ou linear
+
+//             if (i >= tableSize)
+//             {
+//                 Console.WriteLine("Tabela cheia!");
+//                 return;
+//             }
+//         }
+
+//         tabela[pos] = new Aluno(matricula, nome);
+//         removido[pos] = false;
+
+//         Console.WriteLine("Aluno inserido com sucesso");
+//     }
+
+//     static void Listar()
+//     {
+//         Console.WriteLine("\n--- TABELA HASH ---");
+
+//         for (int i = 0; i < tableSize; i++)
+//         {
+//             if (tabela[i] != null && !removido[i])
+//                 Console.WriteLine("[" + i + "] = " + tabela[i].Matricula + " - " + tabela[i].Nome);
+//             else
+//                 Console.WriteLine("[" + i + "] = vazio");
+//         }
+//     }
+
+//     static void Remover()
+//     {
+//         Console.Write("Digite a matricula para remover: ");
+//         int matricula = int.Parse(Console.ReadLine());
+
+//         int pos = HashFunction(matricula);
+//         int i = 0;
+
+//         while (tabela[pos] != null)
+//         {
+//             if (tabela[pos].Matricula == matricula && !removido[pos])
+//             {
+//                 removido[pos] = true;
+//                 Console.WriteLine("Aluno removido!");
+//                 return;
+//             }
+
+//             i++;
+//             pos = ProximaPosicao(matricula, i); // Função que define se é quadratico ou linear
+
+//             if (i >= tableSize)
+//                 break;
+//         }
+
+//         Console.WriteLine("Aluno não encontrado");
+//     }
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - Inserir aluno");
+//             Console.WriteLine("2 - Listar alunos");
+//             Console.WriteLine("3 - Remover aluno");
+//             Console.WriteLine("4 - Sair");
+//             Console.Write("Escolha: ");
+
+//             opcao = int.Parse(Console.ReadLine());
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     InserirAluno();
+//                     break;
+
+//                 case 2:
+//                     Listar();
+//                     break;
+
+//                 case 3:
+//                     Remover();
+//                     break;
+
+//                 case 4:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
+
+//         } while (opcao != 4);
+//     }
+// }
+
+
+//  4° MODELO -------------------------------------------------------------------------------------- 
+
+// using System;
+
+// class Aluno
+// {
+//     public int Matricula;
+//     public string Nome;
+
+//     public Aluno(int matricula, string nome)
+//     {
+//         this.Matricula = matricula;
+//         this.Nome = nome;
+//     }
+// }
+
+// class Program
+// {
+//     static int tableSize = 100;
+//     static Aluno[] tabela = new Aluno[tableSize];
+//     static bool[] removido = new bool[tableSize];
+
+    
+//     static int HashFunction(int key)
+//     {
+//         return key % tableSize;
+//     }
+
+//     // funcao de double hash
+//     static int DoubleHashing(int key, int tableSize, int attempt)
+//     {
+//         int hash1 = HashFunction(key) % tableSize;
+
+//         int hash2 = 1 + (key % (tableSize - 1));
+
+//         return (hash1 + attempt * hash2) % tableSize;
+//     }
+
+//     // funcao para contar a quantidade de elementos
+//     static int QuantidadeElementos()
+//     {
+//         int count = 0;
+
+//         for (int i = 0; i < tableSize; i++)
+//         {
+//             if (tabela[i] != null && !removido[i])
+//                 count++;
+//         }
+
+//         return count;
+//     }
+
+//     // funcao para definir qua hash utilizar com base na quatidade de elementos da tabela
+//     static int ProximaPosicao(int matricula, int i)
+//     {
+//         double fatorCarga = (double)QuantidadeElementos() / tableSize;
+
+//         if (fatorCarga >= 0.8) // DOUBLE HASHING
+//             return DoubleHashing(matricula, tableSize, i);
+
+//         else if (fatorCarga >= 0.7) // QUADRATICO
+//             return (HashFunction(matricula) + i * i) % tableSize;
+
+//         else // LINEAR
+//             return (HashFunction(matricula) + i) % tableSize;
+//     }
+
+//     static bool ExisteMatricula(int matricula)
+//     {
+//         int pos = HashFunction(matricula);
+//         int i = 0;
+
+//         while (tabela[pos] != null)
+//         {
+//             if (tabela[pos].Matricula == matricula && !removido[pos])
+//             {
+//                 return true;
+//             }
+
+//             i++;
+//             pos = ProximaPosicao(matricula, i);
+
+//             if (i >= tableSize)
+//                 break;
+//         }
+
+//         return false;
+//     }
+
+//     static void InserirAluno()
+//     {
+//         Console.Write("Matricula: ");
+//         int matricula = int.Parse(Console.ReadLine());
+
+//         if (ExisteMatricula(matricula))
+//         {
+//             Console.WriteLine("Erro: matricula ja cadastrada");
+//             return;
+//         }
+
+//         Console.Write("Nome: ");
+//         string nome = Console.ReadLine();
+
+//         int pos = HashFunction(matricula);
+//         int i = 0;
+
+//         while (tabela[pos] != null && !removido[pos])
+//         {
+//             i++;
+//             pos = ProximaPosicao(matricula, i);
+
+//             if (i >= tableSize)
+//             {
+//                 Console.WriteLine("Tabela cheia!");
+//                 return;
+//             }
+//         }
+
+//         tabela[pos] = new Aluno(matricula, nome);
+//         removido[pos] = false;
+
+//         Console.WriteLine("Aluno inserido com sucesso");
+//     }
+
+//     static void Listar()
+//     {
+//         Console.WriteLine("\n--- TABELA HASH ---");
+
+//         for (int i = 0; i < tableSize; i++)
+//         {
+//             if (tabela[i] != null && !removido[i])
+//                 Console.WriteLine("[" + i + "] = " + tabela[i].Matricula + " - " + tabela[i].Nome);
+//             else
+//                 Console.WriteLine("[" + i + "] = vazio");
+//         }
+//     }
+
+//     static void Remover()
+//     {
+//         Console.Write("Digite a matricula para remover: ");
+//         int matricula = int.Parse(Console.ReadLine());
+
+//         int pos = HashFunction(matricula);
+//         int i = 0;
+
+//         while (tabela[pos] != null)
+//         {
+//             if (tabela[pos].Matricula == matricula && !removido[pos])
+//             {
+//                 removido[pos] = true;
+//                 Console.WriteLine("Aluno removido!");
+//                 return;
+//             }
+
+//             i++;
+//             pos = ProximaPosicao(matricula, i);
+
+//             if (i >= tableSize)
+//                 break;
+//         }
+
+//         Console.WriteLine("Aluno não encontrado");
+//     }
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - Inserir aluno");
+//             Console.WriteLine("2 - Listar alunos");
+//             Console.WriteLine("3 - Remover aluno");
+//             Console.WriteLine("4 - Sair");
+//             Console.Write("Escolha: ");
+
+//             opcao = int.Parse(Console.ReadLine());
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     InserirAluno();
+//                     break;
+
+//                 case 2:
+//                     Listar();
+//                     break;
+
+//                 case 3:
+//                     Remover();
+//                     break;
+
+//                 case 4:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
+
+//         } while (opcao != 4);
+//     }
+// }
+
+
+
+
+
 
 
 
@@ -1258,13 +1946,202 @@ class Program
 
 // 8° Aula - 07/04 ==========================================================================================
 
+
+//  1° MODELO -------------------------------------------------------------------------------------- 
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static HashSet<int> conjunto = new HashSet<int>();
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - ADD");
+//             Console.WriteLine("2 - REMOVE");
+//             Console.WriteLine("3 - CONTAINS");
+//             Console.WriteLine("4 - Sair");
+//             Console.Write("Escolha: ");
+
+//             opcao = int.Parse(Console.ReadLine());
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     MetodoAdd();
+//                     break;
+
+//                 case 2:
+//                     MetodoRemove();
+//                     break;
+
+//                 case 3:
+//                     MetodoContains();
+//                     break;
+
+//                 case 4:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
+
+//         } while (opcao != 4);
+//     }
+
+//     static void MetodoAdd()
+//     {
+//         Console.Write("Digite um número: ");
+//         int num = int.Parse(Console.ReadLine());
+
+//         if (conjunto.Add(num))
+//             Console.WriteLine("Número adicionado!");
+//         else
+//             Console.WriteLine("Número já existe!");
+//     }
+
+//     static void MetodoContains()
+//     {
+//         Console.Write("Digite um número: ");
+//         int num = int.Parse(Console.ReadLine());
+
+//         if (conjunto.Contains(num))
+//             Console.WriteLine("O número existe!");
+//         else
+//             Console.WriteLine("O número NÃO existe!");
+//     }
+
+//     static void MetodoRemove()
+//     {
+//         Console.Write("Digite um número: ");
+//         int num = int.Parse(Console.ReadLine());
+
+//         if (conjunto.Remove(num))
+//             Console.WriteLine("Número removido!");
+//         else
+//             Console.WriteLine("Número não encontrado!");
+//     }
+// }
+
+
+//  2° MODELO -------------------------------------------------------------------------------------- 
+
 using System;
-using Microsoft.VisualBasic;
+using System.Collections.Generic;
+
 class Program
 {
-    var numeros = new HashSet<int> {1,2,3,4,5,6,7,8,9,10};
+    static HashSet<int> UsuarioInput = new HashSet<int>();
+    static HashSet<int> AutoInput = new HashSet<int>() { 1,2,3,4,5,6,7,8,9,10 };
+    static HashSet<int> Uniao = new HashSet<int>();
 
+    static void Main()
+    {
+        int opcao;
 
-    Var lista = new List<int> {1,2,2,3,3,4};
-    Var ConjutnoUnico = new HashSet<int> {List};
+        do
+        {
+            Console.WriteLine("\n==== MENU ====");
+            Console.WriteLine("1 - ADD");
+            Console.WriteLine("2 - REMOVE");
+            Console.WriteLine("3 - CONTAINS");
+            Console.WriteLine("4 - ATUALIZAR UNIÃO");
+            Console.WriteLine("5 - MOSTRAR UNIÃO");
+            Console.WriteLine("6 - SAIR");
+            Console.Write("Escolha: ");
+
+            opcao = int.Parse(Console.ReadLine());
+
+            switch (opcao)
+            {
+                case 1:
+                    MetodoAdd();
+                    break;
+
+                case 2:
+                    MetodoRemove();
+                    break;
+
+                case 3:
+                    MetodoContains();
+                    break;
+
+                case 4:
+                    AtualizarUniao();
+                    Console.WriteLine("União atualizada!");
+                    break;
+
+                case 5:
+                    Uniao();
+                    break;
+
+                case 6:
+                    Console.WriteLine("Saindo...");
+                    break;
+
+                default:
+                    Console.WriteLine("Opção inválida!");
+                    break;
+            }
+
+        } while (opcao != 6);
+    }
+
+    static void MetodoAdd()
+    {
+        Console.Write("Digite um número: ");
+        int num = int.Parse(Console.ReadLine());
+
+        if (UsuarioInput.Add(num))
+            Console.WriteLine("Número adicionado!");
+        else
+            Console.WriteLine("Número já existe!");
+    }
+
+    static void MetodoRemove()
+    {
+        Console.Write("Digite um número: ");
+        int num = int.Parse(Console.ReadLine());
+
+        if (UsuarioInput.Remove(num))
+            Console.WriteLine("Número removido!");
+        else
+            Console.WriteLine("Número não encontrado!");
+    }
+
+    static void MetodoContains()
+    {
+        Console.Write("Digite um número: ");
+        int num = int.Parse(Console.ReadLine());
+
+        if (UsuarioInput.Contains(num))
+            Console.WriteLine("O número existe!");
+        else
+            Console.WriteLine("O número NÃO existe!");
+    }
+
+    static void Uniao()
+    {
+        Uniao = new HashSet<int>(AutoInput);
+        Uniao.UnionWith(UsuarioInput);
+    }
+
+    static void MostrarUniao()
+    {
+        Console.WriteLine("União:");
+
+        foreach (var item in Uniao)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine();
+    }
 }
