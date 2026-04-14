@@ -2034,114 +2034,134 @@ class Program
 
 //  2° MODELO -------------------------------------------------------------------------------------- 
 
-using System;
-using System.Collections.Generic;
+// using System;
+// using System.Collections.Generic;
 
-class Program
-{
-    static HashSet<int> UsuarioInput = new HashSet<int>();
-    static HashSet<int> AutoInput = new HashSet<int>() { 1,2,3,4,5,6,7,8,9,10 };
-    static HashSet<int> Uniao = new HashSet<int>();
+// class Program
+// {
+//     static HashSet<int> UsuarioInput = new HashSet<int>();
+//     static HashSet<int> AutoInput = new HashSet<int>() { 1,2,3,4,5,6,7,8,9,10 };
+//     static HashSet<int> UniaoSet = new HashSet<int>();
 
-    static void Main()
-    {
-        int opcao;
+//     static void Main()
+//     {
+//         int opcao;
 
-        do
-        {
-            Console.WriteLine("\n==== MENU ====");
-            Console.WriteLine("1 - ADD");
-            Console.WriteLine("2 - REMOVE");
-            Console.WriteLine("3 - CONTAINS");
-            Console.WriteLine("4 - ATUALIZAR UNIÃO");
-            Console.WriteLine("5 - MOSTRAR UNIÃO");
-            Console.WriteLine("6 - SAIR");
-            Console.Write("Escolha: ");
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - ADD");
+//             Console.WriteLine("2 - REMOVE");
+//             Console.WriteLine("3 - CONTAINS");
+//             Console.WriteLine("4 - ATUALIZAR UNIÃO");
+//             Console.WriteLine("5 - MOSTRAR UNIÃO");
+//             Console.WriteLine("6 - SAIR");
+//             Console.Write("Escolha: ");
 
-            opcao = int.Parse(Console.ReadLine());
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite um número válido!");
+//                 continue;
+//             }
 
-            switch (opcao)
-            {
-                case 1:
-                    MetodoAdd();
-                    break;
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     MetodoAdd();
+//                     break;
 
-                case 2:
-                    MetodoRemove();
-                    break;
+//                 case 2:
+//                     MetodoRemove();
+//                     break;
 
-                case 3:
-                    MetodoContains();
-                    break;
+//                 case 3:
+//                     MetodoContains();
+//                     break;
 
-                case 4:
-                    AtualizarUniao();
-                    Console.WriteLine("União atualizada!");
-                    break;
+//                 case 4:
+//                     AtualizarUniao();
+//                     Console.WriteLine("União atualizada!");
+//                     break;
 
-                case 5:
-                    Uniao();
-                    break;
+//                 case 5:
+//                     MostrarUniao();
+//                     break;
 
-                case 6:
-                    Console.WriteLine("Saindo...");
-                    break;
+//                 case 6:
+//                     Console.WriteLine("Saindo...");
+//                     break;
 
-                default:
-                    Console.WriteLine("Opção inválida!");
-                    break;
-            }
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
 
-        } while (opcao != 6);
-    }
+//         } while (opcao != 6);
+//     }
 
-    static void MetodoAdd()
-    {
-        Console.Write("Digite um número: ");
-        int num = int.Parse(Console.ReadLine());
+//     static void MetodoAdd()
+//     {
+//         Console.Write("Digite um número: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Add(num))
+//                 Console.WriteLine("Número adicionado!");
+//             else
+//                 Console.WriteLine("Número já existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada inválida!");
+//         }
+//     }
 
-        if (UsuarioInput.Add(num))
-            Console.WriteLine("Número adicionado!");
-        else
-            Console.WriteLine("Número já existe!");
-    }
+//     static void MetodoRemove()
+//     {
+//         Console.Write("Digite um número: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Remove(num))
+//                 Console.WriteLine("Número removido!");
+//             else
+//                 Console.WriteLine("Número não encontrado!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada inválida!");
+//         }
+//     }
 
-    static void MetodoRemove()
-    {
-        Console.Write("Digite um número: ");
-        int num = int.Parse(Console.ReadLine());
+//     static void MetodoContains()
+//     {
+//         Console.Write("Digite um número: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Contains(num))
+//                 Console.WriteLine("O número existe!");
+//             else
+//                 Console.WriteLine("O número NÃO existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada inválida!");
+//         }
+//     }
 
-        if (UsuarioInput.Remove(num))
-            Console.WriteLine("Número removido!");
-        else
-            Console.WriteLine("Número não encontrado!");
-    }
+//     static void AtualizarUniao()
+//     {
+//         UniaoSet = new HashSet<int>(AutoInput);
+//         UniaoSet.UnionWith(UsuarioInput);
+//     }
 
-    static void MetodoContains()
-    {
-        Console.Write("Digite um número: ");
-        int num = int.Parse(Console.ReadLine());
+//     static void MostrarUniao()
+//     {
+//         Console.WriteLine("União:");
 
-        if (UsuarioInput.Contains(num))
-            Console.WriteLine("O número existe!");
-        else
-            Console.WriteLine("O número NÃO existe!");
-    }
+//         foreach (var item in UniaoSet)
+//         {
+//             Console.Write(item + " ");
+//         }
 
-    static void Uniao()
-    {
-        Uniao = new HashSet<int>(AutoInput);
-        Uniao.UnionWith(UsuarioInput);
-    }
-
-    static void MostrarUniao()
-    {
-        Console.WriteLine("União:");
-
-        foreach (var item in Uniao)
-        {
-            Console.Write(item + " ");
-        }
-        Console.WriteLine();
-    }
-}
+//         Console.WriteLine();
+//     }
+// }
