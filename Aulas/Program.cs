@@ -1046,6 +1046,7 @@ class Program
 
 
  // 5° Aula - 10/03 ==========================================================================================
+
 //  using System.Collections.Generic;
 
 // public class Deck
@@ -1098,7 +1099,6 @@ class Program
 
  // 6° Aula - 24/03 ==========================================================================================
 
-
 //  1° MODELO --------------------------------------------------------------------------------------  
 
 // using System;
@@ -1142,6 +1142,14 @@ class Program
 // }
 
 
+
+
+
+
+
+
+
+
 //  2° MODELO --------------------------------------------------------------------------------------  
 
 // using System;
@@ -1158,6 +1166,14 @@ class Program
     
 // }
 // }
+
+
+
+
+
+
+
+
 
 
 //  3° MODELO --------------------------------------------------------------------------------------
@@ -1198,6 +1214,14 @@ class Program
 //         }
 //     }
 // }
+
+
+
+
+
+
+
+
 
 
 //  4° MODELO --------------------------------------------------------------------------------------  
@@ -1250,8 +1274,16 @@ class Program
 //     }
 // }
 
-// 7° Aula - 31/03 (FALTEI) ==========================================================================================
 
+
+
+
+
+
+
+
+
+// 7° Aula - 31/03 (FALTEI) ==========================================================================================
 
 //  1° MODELO -------------------------------------------------------------------------------------- 
 
@@ -1395,6 +1427,14 @@ class Program
 // }
 
 
+
+
+
+
+
+
+
+
 //  2° MODELO -------------------------------------------------------------------------------------- 
 
 // using System;
@@ -1535,6 +1575,14 @@ class Program
 //         } while (opcao != 4);
 //     }
 // }
+
+
+
+
+
+
+
+
 
 
 //  3° MODELO -------------------------------------------------------------------------------------- 
@@ -1727,6 +1775,14 @@ class Program
 //         } while (opcao != 4);
 //     }
 // }
+
+
+
+
+
+
+
+
 
 
 //  4° MODELO -------------------------------------------------------------------------------------- 
@@ -2032,6 +2088,14 @@ class Program
 // }
 
 
+
+
+
+
+
+
+
+
 //  2° MODELO -------------------------------------------------------------------------------------- 
 
 // using System;
@@ -2179,14 +2243,1160 @@ class Program
 
 //  1° MODELO -------------------------------------------------------------------------------------- 
 
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static HashSet<int> UsuarioInput = new HashSet<int>();
+//     static HashSet<int> AutoInput = new HashSet<int>() { 1,2,3,4,5,6,7,8,9,10 };
+//     static HashSet<int> UniaoSet = new HashSet<int>();
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - ADD");
+//             Console.WriteLine("2 - REMOVE");
+//             Console.WriteLine("3 - CONTAINS");
+//             Console.WriteLine("4 - ATUALIZAR UNIÃO");
+//             Console.WriteLine("5 - MOSTRAR UNIÃO");
+//             Console.WriteLine("6 - SAIR");
+//             Console.Write("Escolha: ");
+
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite um número válido!");
+//                 continue;
+//             }
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     MetodoAdd();
+//                     break;
+
+//                 case 2:
+//                     MetodoRemove();
+//                     break;
+
+//                 case 3:
+//                     MetodoContains();
+//                     break;
+
+//                 case 4:
+//                     AtualizarUniao();
+//                     Console.WriteLine("União atualizada!");
+//                     break;
+
+//                 case 5:
+//                     MostrarUniao();
+//                     break;
+
+//                 case 6:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
+
+//         } while (opcao != 6);
+//     }
+
+//     static void MetodoAdd()
+//     {
+//         Console.Write("Digite um número: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Add(num))
+//                 Console.WriteLine("Número adicionado!");
+//             else
+//                 Console.WriteLine("Número já existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada inválida!");
+//         }
+//     }
+
+//     static void MetodoRemove()
+//     {
+//         Console.Write("Digite um número: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Remove(num))
+//                 Console.WriteLine("Número removido!");
+//             else
+//                 Console.WriteLine("Número não encontrado!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada inválida!");
+//         }
+//     }
+
+//     static void MetodoContains()
+//     {
+//         Console.Write("Digite um número: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Contains(num))
+//                 Console.WriteLine("O número existe!");
+//             else
+//                 Console.WriteLine("O número NÃO existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada inválida!");
+//         }
+//     }
+
+//     static void AtualizarUniao()
+//     {
+//         UniaoSet = new HashSet<int>(AutoInput);
+//         UniaoSet.UnionWith(UsuarioInput);
+//     }
+
+//     static void MostrarUniao()
+//     {
+//         Console.WriteLine("União:");
+
+//         foreach (var item in UniaoSet)
+//         {
+//             Console.Write(item + " ");
+//         }
+
+//         Console.WriteLine();
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+//  2° MODELO -------------------------------------------------------------------------------------- 
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static HashSet<int> UsuarioInput = new HashSet<int>();
+//     static HashSet<int> AutoInput = new HashSet<int>() { 1,2,3,4,5,6,7,8,9,10 };
+//     static HashSet<int> UniaoSet = new HashSet<int>();
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - ADD");
+//             Console.WriteLine("2 - REMOVE");
+//             Console.WriteLine("3 - CONTAINS");
+//             Console.WriteLine("4 - ATUALIZAR UNIAO");
+//             Console.WriteLine("5 - MOSTRAR UNIAO");
+//             Console.WriteLine("6 - INTERSECAO");
+//             Console.WriteLine("7 - SAIR");
+//             Console.Write("Escolha: ");
+
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite um numero valido!");
+//                 continue;
+//             }
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     MetodoAdd();
+//                     break;
+
+//                 case 2:
+//                     MetodoRemove();
+//                     break;
+
+//                 case 3:
+//                     MetodoContains();
+//                     break;
+
+//                 case 4:
+//                     AtualizarUniao();
+//                     Console.WriteLine("Uniao atualizada!");
+//                     break;
+
+//                 case 5:
+//                     MostrarUniao();
+//                     break;
+
+//                 case 6:
+//                     Intersecao();
+//                     break;
+
+//                 case 7:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opcao invalida!");
+//                     break;
+//             }
+
+//         } while (opcao != 7);
+//     }
+
+//     static void MetodoAdd()
+//     {
+//         Console.Write("Digite um numero: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Add(num))
+//                 Console.WriteLine("Numero adicionado!");
+//             else
+//                 Console.WriteLine("Numero ja existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada invalida!");
+//         }
+//     }
+
+//     static void MetodoRemove()
+//     {
+//         Console.Write("Digite um numero: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Remove(num))
+//                 Console.WriteLine("Numero removido!");
+//             else
+//                 Console.WriteLine("Numero nao encontrado!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada invalida!");
+//         }
+//     }
+
+//     static void MetodoContains()
+//     {
+//         Console.Write("Digite um numero: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Contains(num))
+//                 Console.WriteLine("O numero existe!");
+//             else
+//                 Console.WriteLine("O numero NAO existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada invalida!");
+//         }
+//     }
+
+//     static void AtualizarUniao()
+//     {
+//         UniaoSet = new HashSet<int>(AutoInput);
+//         UniaoSet.UnionWith(UsuarioInput);
+//     }
+
+//     static void MostrarUniao()
+//     {
+//         Console.WriteLine("Uniao:");
+
+//         foreach (var item in UniaoSet)
+//         {
+//             Console.Write(item + " ");
+//         }
+
+//         Console.WriteLine();
+//     }
+
+//     static void Intersecao()
+//     {
+//         HashSet<int> intersecao = new HashSet<int>(AutoInput);
+//         intersecao.IntersectWith(UsuarioInput);
+
+//         Console.WriteLine("Intersecao:");
+
+//         foreach (var item in intersecao)
+//         {
+//             Console.Write(item + " ");
+//         }
+
+//         Console.WriteLine();
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+//  3° MODELO -------------------------------------------------------------------------------------- 
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static HashSet<int> UsuarioInput = new HashSet<int>();
+//     static HashSet<int> AutoInput = new HashSet<int>() { 1,2,3,4,5,6,7,8,9,10 };
+//     static HashSet<int> UniaoSet = new HashSet<int>();
+
+//     static void Main()
+//     {
+//         int opcao;
+        
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - ADD");
+//             Console.WriteLine("2 - REMOVE");
+//             Console.WriteLine("3 - CONTAINS");
+//             Console.WriteLine("4 - ATUALIZAR UNIAO");
+//             Console.WriteLine("5 - MOSTRAR UNIAO");
+//             Console.WriteLine("6 - INTERSECAO");
+//             Console.WriteLine("7 - DIFERENCA (USUARIO - SISTEMA)");
+//             Console.WriteLine("8 - DIFERENCA (SISTEMA - USUARIO)");
+//             Console.WriteLine("9 - SAIR");
+//             Console.Write("Escolha: ");
+
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite um numero valido!");
+//                 continue;
+//             }
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     MetodoAdd();
+//                     break;
+
+//                 case 2:
+//                     MetodoRemove();
+//                     break;
+
+//                 case 3:
+//                     MetodoContains();
+//                     break;
+
+//                 case 4:
+//                     AtualizarUniao();
+//                     Console.WriteLine("Uniao atualizada!");
+//                     break;
+
+//                 case 5:
+//                     MostrarUniao();
+//                     break;
+
+//                 case 6:
+//                     Intersecao();
+//                     break;
+
+//                 case 7:
+//                     diferencaSistemaUsuario();
+//                     break;
+
+//                 case 8:
+//                     diferencaUsuarioSistema();
+//                     break;
+
+//                 case 9:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opcao invalida!");
+//                     break;
+//             }
+
+//         } while (opcao != 9);
+//     }
+
+//     static void MetodoAdd()
+//     {
+//         Console.Write("Digite um numero: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Add(num))
+//                 Console.WriteLine("Numero adicionado!");
+//             else
+//                 Console.WriteLine("Numero ja existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada invalida!");
+//         }
+//     }
+
+//     static void MetodoRemove()
+//     {
+//         Console.Write("Digite um numero: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Remove(num))
+//                 Console.WriteLine("Numero removido!");
+//             else
+//                 Console.WriteLine("Numero nao encontrado!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada invalida!");
+//         }
+//     }
+
+//     static void MetodoContains()
+//     {
+//         Console.Write("Digite um numero: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Contains(num))
+//                 Console.WriteLine("O numero existe!");
+//             else
+//                 Console.WriteLine("O numero NAO existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada invalida!");
+//         }
+//     }
+
+//     static void AtualizarUniao()
+//     {
+//         UniaoSet = new HashSet<int>(AutoInput);
+//         UniaoSet.UnionWith(UsuarioInput);
+//     }
+
+//     static void MostrarUniao()
+//     {
+//         Console.WriteLine("Uniao:");
+
+//         foreach (var item in UniaoSet)
+//         {
+//             Console.Write(item + " ");
+//         }
+
+//         Console.WriteLine();
+//     }
+
+//     static void Intersecao()
+//     {
+//         HashSet<int> intersecao = new HashSet<int>(AutoInput);
+//         intersecao.IntersectWith(UsuarioInput);
+
+//         Console.WriteLine("Intersecao:");
+
+//         foreach (var item in intersecao)
+//         {
+//             Console.Write(item + " ");
+//         }
+
+//         Console.WriteLine();
+//     }
+    
+//     static void diferencaSistemaUsuario()
+//     {
+//         var diferenca = new HashSet<int>(UsuarioInput);
+//         diferenca.ExceptWith(AutoInput);
+
+//         Console.WriteLine("Diferenca (Usuario - Sistema):");
+
+//         foreach (var numero in diferenca)
+//         {
+//             Console.WriteLine(numero);
+//         }
+//     }
+    
+//     static void diferencaUsuarioSistema()
+//     {
+//         var diferenca = new HashSet<int>(AutoInput);
+//         diferenca.ExceptWith(UsuarioInput);
+
+//         Console.WriteLine("Diferenca (Sistema - Usuario):");
+
+//         foreach (var numero in diferenca)
+//         {
+//             Console.WriteLine(numero);
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+//  4° MODELO -------------------------------------------------------------------------------------- 
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static HashSet<int> UsuarioInput = new HashSet<int>();
+//     static HashSet<int> AutoInput = new HashSet<int>() { 1,2,3,4,5,6,7,8,9,10 };
+//     static HashSet<int> UniaoSet = new HashSet<int>();
+
+//     static void Main()
+//     {
+//         int opcao;
+        
+//         do
+//         {
+//             Console.Clear();
+
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - ADD");
+//             Console.WriteLine("2 - REMOVE");
+//             Console.WriteLine("3 - CONTAINS");
+//             Console.WriteLine("4 - ATUALIZAR UNIAO");
+//             Console.WriteLine("5 - MOSTRAR UNIAO");
+//             Console.WriteLine("6 - INTERSECAO");
+//             Console.WriteLine("7 - DIFERENCA (USUARIO - SISTEMA)");
+//             Console.WriteLine("8 - DIFERENCA (SISTEMA - USUARIO)");
+//             Console.WriteLine("10 - SUBSET (USUARIO -> SISTEMA)");
+//             Console.WriteLine("11 - SUBSET (SISTEMA -> USUARIO)");
+//             Console.WriteLine("12 - SUPERSET (USUARIO -> SISTEMA)");
+//             Console.WriteLine("13 - SUPERSET (SISTEMA -> USUARIO)");
+//             Console.WriteLine("14 - OVERLAPS");
+//             Console.WriteLine("15 - DIFERENCA SIMETRICA (USUARIO -> SISTEMA)");
+//             Console.WriteLine("16 - DIFERENCA SIMETRICA (SISTEMA -> USUARIO)");
+//             Console.WriteLine("9 - SAIR");
+//             Console.Write("Escolha: ");
+
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite um numero valido!");
+//                 continue;
+//             }
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     MetodoAdd();
+//                     break;
+
+//                 case 2:
+//                     MetodoRemove();
+//                     break;
+
+//                 case 3:
+//                     MetodoContains();
+//                     break;
+
+//                 case 4:
+//                     AtualizarUniao();
+//                     Console.WriteLine("Uniao atualizada!");
+//                     break;
+
+//                 case 5:
+//                     MostrarUniao();
+//                     break;
+
+//                 case 6:
+//                     Intersecao();
+//                     break;
+
+//                 case 7:
+//                     DiferencaUsuarioSistema();
+//                     break;
+
+//                 case 8:
+//                     DiferencaSistemaUsuario();
+//                     break;
+
+//                 case 10:
+//                     SubsetUsuarioSistema();
+//                     break;
+
+//                 case 11:
+//                     SubsetSistemaUsuario();
+//                     break;
+
+//                 case 12:
+//                     SupersetUsuarioSistema();
+//                     break;
+
+//                 case 13:
+//                     SupersetSistemaUsuario();
+//                     break;
+
+//                 case 14:
+//                     Overlaps();
+//                     break;
+
+//                 case 15:
+//                     DiferencaSimetricaUsuarioSistema();
+//                     break;
+
+//                 case 16:
+//                     DiferencaSimetricaSistemaUsuario();
+//                     break;
+
+//                 case 9:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opcao invalida!");
+//                     break;
+//             }
+
+//             Console.WriteLine("\nPressione qualquer tecla para continuar...");
+//             Console.ReadKey();
+
+//         } while (opcao != 9);
+//     }
+
+//     static void MetodoAdd()
+//     {
+//         Console.Write("Digite um numero: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Add(num))
+//                 Console.WriteLine("Numero adicionado!");
+//             else
+//                 Console.WriteLine("Numero ja existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada invalida!");
+//         }
+//     }
+
+//     static void MetodoRemove()
+//     {
+//         Console.Write("Digite um numero: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Remove(num))
+//                 Console.WriteLine("Numero removido!");
+//             else
+//                 Console.WriteLine("Numero nao encontrado!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada invalida!");
+//         }
+//     }
+
+//     static void MetodoContains()
+//     {
+//         Console.Write("Digite um numero: ");
+//         if (int.TryParse(Console.ReadLine(), out int num))
+//         {
+//             if (UsuarioInput.Contains(num))
+//                 Console.WriteLine("O numero existe!");
+//             else
+//                 Console.WriteLine("O numero NAO existe!");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Entrada invalida!");
+//         }
+//     }
+
+//     static void AtualizarUniao()
+//     {
+//         UniaoSet = new HashSet<int>(AutoInput);
+//         UniaoSet.UnionWith(UsuarioInput);
+//     }
+
+//     static void MostrarUniao()
+//     {
+//         Console.WriteLine("Uniao:");
+
+//         foreach (var item in UniaoSet)
+//         {
+//             Console.Write(item + " ");
+//         }
+
+//         Console.WriteLine();
+//     }
+
+//     static void Intersecao()
+//     {
+//         HashSet<int> intersecao = new HashSet<int>(AutoInput);
+//         intersecao.IntersectWith(UsuarioInput);
+
+//         Console.WriteLine("Intersecao:");
+
+//         foreach (var item in intersecao)
+//         {
+//             Console.Write(item + " ");
+//         }
+
+//         Console.WriteLine();
+//     }
+    
+//     static void DiferencaUsuarioSistema()
+//     {
+//         var diferenca = new HashSet<int>(UsuarioInput);
+//         diferenca.ExceptWith(AutoInput);
+
+//         Console.WriteLine("Diferenca (Usuario - Sistema):");
+
+//         foreach (var numero in diferenca)
+//         {
+//             Console.WriteLine(numero);
+//         }
+//     }
+    
+//     static void DiferencaSistemaUsuario()
+//     {
+//         var diferenca = new HashSet<int>(AutoInput);
+//         diferenca.ExceptWith(UsuarioInput);
+
+//         Console.WriteLine("Diferenca (Sistema - Usuario):");
+
+//         foreach (var numero in diferenca)
+//         {
+//             Console.WriteLine(numero);
+//         }
+//     }
+
+//     static void SubsetUsuarioSistema()
+//     {
+//         bool resultado = UsuarioInput.IsSubsetOf(AutoInput);
+//         Console.WriteLine("Usuario eh subconjunto do sistema? " + resultado);
+//     }
+
+//     static void SubsetSistemaUsuario()
+//     {
+//         bool resultado = AutoInput.IsSubsetOf(UsuarioInput);
+//         Console.WriteLine("Sistema eh subconjunto do usuario? " + resultado);
+//     }
+
+//     static void SupersetUsuarioSistema()
+//     {
+//         bool resultado = UsuarioInput.IsSupersetOf(AutoInput);
+//         Console.WriteLine("Usuario eh superconjunto do sistema? " + resultado);
+//     }
+
+//     static void SupersetSistemaUsuario()
+//     {
+//         bool resultado = AutoInput.IsSupersetOf(UsuarioInput);
+//         Console.WriteLine("Sistema eh superconjunto do usuario? " + resultado);
+//     }
+
+//     static void Overlaps()
+//     {
+//         bool resultado = UsuarioInput.Overlaps(AutoInput);
+//         Console.WriteLine("Existe intersecao entre usuario e sistema? " + resultado);
+//     }
+
+//     static void DiferencaSimetricaUsuarioSistema()
+//     {
+//         var resultado = new HashSet<int>(UsuarioInput);
+//         resultado.SymmetricExceptWith(AutoInput);
+
+//         Console.WriteLine("Diferenca Simetrica (Usuario -> Sistema):");
+
+//         foreach (var num in resultado)
+//         {
+//             Console.Write(num + " ");
+//         }
+
+//         Console.WriteLine();
+//     }
+
+//     static void DiferencaSimetricaSistemaUsuario()
+//     {
+//         var resultado = new HashSet<int>(AutoInput);
+//         resultado.SymmetricExceptWith(UsuarioInput);
+
+//         Console.WriteLine("Diferenca Simetrica (Sistema -> Usuario):");
+
+//         foreach (var num in resultado)
+//         {
+//             Console.Write(num + " ");
+//         }
+
+//         Console.WriteLine();
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+// 10° Aula - 28/04 ==========================================================================================
+
+// using System;
+
+// class Program
+// {
+//        static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - ADD");
+//             Console.WriteLine("2 - DELETE");
+//             Console.WriteLine("3 - EXIBIR");
+//             Console.WriteLine("4 - ATUALIZAR");
+//             Console.WriteLine("5 - SAIR");
+//             Console.Write("Escolha: ");
+
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite um número válido!");
+//                 continue;
+//             }
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     MetodoAdd();
+//                     break;
+
+//                 case 2:
+//                     MetodoRemove();
+//                     break;
+
+//                 case 3:
+//                     MetodoContains();
+//                     break;
+
+//                 case 4:
+//                     AtualizarUniao();
+//                     Console.WriteLine("União atualizada!");
+//                     break;
+
+//                 case 5:
+//                     MostrarUniao();
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
+
+//         } while (opcao != 6);
+//     } 
+// }
+// class usuario
+// {
+//     public int id;
+//     public String nome;
+//     public int cpf;
+// }
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static Dictionary<int, usuario> usuarios = new Dictionary<int, usuario>();
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - ADD");
+//             Console.WriteLine("2 - DELETE");
+//             Console.WriteLine("3 - EXIBIR");
+//             Console.WriteLine("4 - ATUALIZAR");
+//             Console.WriteLine("5 - SAIR");
+//             Console.Write("Escolha: ");
+
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite um número válido!");
+//                 continue;
+//             }
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     MetodoAdd();
+//                     break;
+
+//                 case 2:
+//                     MetodoRemove();
+//                     break;
+
+//                 case 3:
+//                     MetodoExibir();
+//                     break;
+
+//                 case 4:
+//                     MetodoAtualizar();
+//                     break;
+
+//                 case 5:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
+
+//         } while (opcao != 5);
+//     }
+
+//     static void MetodoAdd()
+//     {
+//         usuario u = new usuario();
+
+//         Console.Write("ID: ");
+//         u.id = int.Parse(Console.ReadLine());
+
+//         if (usuarios.ContainsKey(u.id))
+//         {
+//             Console.WriteLine("ID já existe!");
+//             return;
+//         }
+
+//         Console.Write("Nome: ");
+//         u.nome = Console.ReadLine();
+
+//         Console.Write("CPF: ");
+//         u.cpf = int.Parse(Console.ReadLine());
+
+//         usuarios.Add(u.id, u);
+
+//         Console.WriteLine("Usuário adicionado!");
+//     }
+
+//     static void MetodoRemove()
+//     {
+//         Console.Write("Digite o ID para remover: ");
+//         int id = int.Parse(Console.ReadLine());
+
+//         if (usuarios.Remove(id))
+//             Console.WriteLine("Removido com sucesso!");
+//         else
+//             Console.WriteLine("ID não encontrado!");
+//     }
+
+//     static void MetodoExibir()
+//     {
+//         if (usuarios.Count == 0)
+//         {
+//             Console.WriteLine("Nenhum usuário cadastrado.");
+//             return;
+//         }
+
+//         foreach (var item in usuarios)
+//         {
+//             Console.WriteLine($"ID: {item.Value.id} | Nome: {item.Value.nome} | CPF: {item.Value.cpf}");
+//         }
+//     }
+
+//     static void MetodoAtualizar()
+//     {
+//         Console.Write("Digite o ID para atualizar: ");
+//         int id = int.Parse(Console.ReadLine());
+
+//         if (!usuarios.ContainsKey(id))
+//         {
+//             Console.WriteLine("Usuário não encontrado!");
+//             return;
+//         }
+
+//         Console.Write("Novo nome: ");
+//         usuarios[id].nome = Console.ReadLine();
+
+//         Console.Write("Novo CPF: ");
+//         usuarios[id].cpf = int.Parse(Console.ReadLine());
+
+//         Console.WriteLine("Atualizado com sucesso!");
+//     }
+// }
+
+// class usuario
+// {
+//     public int id;
+//     public string nome;
+//     public int cpf;
+// }
+
+
+
+//  1° MODELO -------------------------------------------------------------------------------------- 
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static Dictionary<int, Usuario> usuarios = new Dictionary<int, Usuario>();
+
+//     static void Main()
+//     {
+//         int opcao;
+
+//         do
+//         {
+//             Console.WriteLine("\n==== MENU ====");
+//             Console.WriteLine("1 - ADD");
+//             Console.WriteLine("2 - DELETE");
+//             Console.WriteLine("3 - EXIBIR");
+//             Console.WriteLine("4 - ATUALIZAR");
+//             Console.WriteLine("5 - SAIR");
+//             Console.Write("Escolha: ");
+
+//             if (!int.TryParse(Console.ReadLine(), out opcao))
+//             {
+//                 Console.WriteLine("Digite um número válido!");
+//                 continue;
+//             }
+
+//             switch (opcao)
+//             {
+//                 case 1:
+//                     MetodoAdd();
+//                     break;
+
+//                 case 2:
+//                     MetodoRemove();
+//                     break;
+
+//                 case 3:
+//                     MetodoExibir();
+//                     break;
+
+//                 case 4:
+//                     MetodoAtualizar();
+//                     break;
+
+//                 case 5:
+//                     Console.WriteLine("Saindo...");
+//                     break;
+
+//                 default:
+//                     Console.WriteLine("Opção inválida!");
+//                     break;
+//             }
+
+//         } while (opcao != 5);
+//     }
+
+//     static void MetodoAdd()
+//     {
+//         Console.Write("ID: ");
+//         int id = int.Parse(Console.ReadLine());
+
+//         if (usuarios.ContainsKey(id))
+//         {
+//             Console.WriteLine("ID já existe!");
+//             return;
+//         }
+
+//         Console.Write("Nome: ");
+//         string nome = Console.ReadLine();
+
+//         Console.Write("CPF: ");
+//         string cpf = Console.ReadLine();
+
+//         usuarios.Add(id, new Usuario(id, nome, cpf));
+//         Console.WriteLine("Usuário adicionado!");
+//     }
+
+//     static void MetodoRemove()
+//     {
+//         Console.Write("ID para remover: ");
+//         int id = int.Parse(Console.ReadLine());
+
+//         if (usuarios.Remove(id))
+//             Console.WriteLine("Removido com sucesso!");
+//         else
+//             Console.WriteLine("ID não encontrado!");
+//     }
+
+//     static void MetodoExibir()
+//     {
+//         if (usuarios.Count == 0)
+//         {
+//             Console.WriteLine("Nenhum usuário cadastrado.");
+//             return;
+//         }
+
+//         foreach (var u in usuarios.Values)
+//         {
+//             Console.WriteLine($"ID: {u.Id} | Nome: {u.Nome} | CPF: {u.Cpf}");
+//         }
+//     }
+
+//     static void MetodoAtualizar()
+//     {
+//         Console.Write("ID para atualizar: ");
+//         int id = int.Parse(Console.ReadLine());
+
+//         if (!usuarios.ContainsKey(id))
+//         {
+//             Console.WriteLine("Usuário não encontrado!");
+//             return;
+//         }
+
+//         Console.Write("Novo nome: ");
+//         string nome = Console.ReadLine();
+
+//         Console.Write("Novo CPF: ");
+//         string cpf = Console.ReadLine();
+
+//         usuarios[id] = new Usuario(id, nome, cpf);
+
+//         Console.WriteLine("Atualizado com sucesso!");
+//     }
+// }
+
+// class Usuario
+// {
+//     public int Id;
+//     public string Nome;
+//     public string Cpf;
+
+//     public Usuario(int id, string nome, string cpf)
+//     {
+//         Id = id;
+//         Nome = nome;
+//         Cpf = cpf;
+//     }
+// }
+
+
+//  2° MODELO -------------------------------------------------------------------------------------- 
+
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Program
 {
-    static HashSet<int> UsuarioInput = new HashSet<int>();
-    static HashSet<int> AutoInput = new HashSet<int>() { 1,2,3,4,5,6,7,8,9,10 };
-    static HashSet<int> UniaoSet = new HashSet<int>();
+    static Dictionary<Guid, Usuario> usuarios = new Dictionary<Guid, Usuario>();
 
     static void Main()
     {
@@ -2196,11 +3406,12 @@ class Program
         {
             Console.WriteLine("\n==== MENU ====");
             Console.WriteLine("1 - ADD");
-            Console.WriteLine("2 - REMOVE");
-            Console.WriteLine("3 - CONTAINS");
-            Console.WriteLine("4 - ATUALIZAR UNIÃO");
-            Console.WriteLine("5 - MOSTRAR UNIÃO");
-            Console.WriteLine("6 - SAIR");
+            Console.WriteLine("2 - DELETE");
+            Console.WriteLine("3 - EXIBIR");
+            Console.WriteLine("4 - ATUALIZAR");
+            Console.WriteLine("5 - LISTAR NOTA >= 60");
+            Console.WriteLine("6 - BUSCAR POR CPF");
+            Console.WriteLine("7 - SAIR");
             Console.Write("Escolha: ");
 
             if (!int.TryParse(Console.ReadLine(), out opcao))
@@ -2212,101 +3423,191 @@ class Program
             switch (opcao)
             {
                 case 1:
+                {
                     MetodoAdd();
                     break;
-
+                }
                 case 2:
+                {
                     MetodoRemove();
                     break;
-
+                }
                 case 3:
-                    MetodoContains();
+                {
+                    MetodoExibir();
                     break;
-
+                }
                 case 4:
-                    AtualizarUniao();
-                    Console.WriteLine("União atualizada!");
+                {
+                    MetodoAtualizar();
                     break;
-
+                }
                 case 5:
-                    MostrarUniao();
+                {
+                    MetodoWhere();
                     break;
-
+                }
                 case 6:
+                {
+                    MetodoSelect();
+                    break;
+                }
+                case 7:
+                {
                     Console.WriteLine("Saindo...");
                     break;
-
+                }
                 default:
+                {
                     Console.WriteLine("Opção inválida!");
                     break;
+                }
             }
 
-        } while (opcao != 6);
+        } while (opcao != 7);
     }
 
     static void MetodoAdd()
     {
-        Console.Write("Digite um número: ");
-        if (int.TryParse(Console.ReadLine(), out int num))
+        Console.Write("Nome: ");
+        string nome = Console.ReadLine() ?? "";
+
+        Console.Write("CPF: ");
+        string cpf = Console.ReadLine() ?? "";
+
+        Console.Write("Nota: ");
+        float nota;
+
+        if (!float.TryParse(Console.ReadLine(), out nota))
         {
-            if (UsuarioInput.Add(num))
-                Console.WriteLine("Número adicionado!");
-            else
-                Console.WriteLine("Número já existe!");
+            Console.WriteLine("Nota inválida!");
+            return;
         }
-        else
-        {
-            Console.WriteLine("Entrada inválida!");
-        }
+
+        Usuario usuario = new Usuario(nome, cpf, nota);
+        usuarios.Add(usuario.Id, usuario);
+
+        Console.WriteLine("Usuário adicionado");
     }
 
     static void MetodoRemove()
     {
-        Console.Write("Digite um número: ");
-        if (int.TryParse(Console.ReadLine(), out int num))
+        Console.Write("ID para remover: ");
+        Guid id;
+
+        if (!Guid.TryParse(Console.ReadLine(), out id))
         {
-            if (UsuarioInput.Remove(num))
-                Console.WriteLine("Número removido!");
-            else
-                Console.WriteLine("Número não encontrado!");
+            Console.WriteLine("ID inválido!");
+            return;
         }
+
+        if (usuarios.Remove(id))
+            Console.WriteLine("Removido com sucesso!");
         else
+            Console.WriteLine("ID não encontrado!");
+    }
+
+    static void MetodoExibir()
+    {
+        if (usuarios.Count == 0)
         {
-            Console.WriteLine("Entrada inválida!");
+            Console.WriteLine("Nenhum usuário cadastrado.");
+            return;
+        }
+
+        foreach (var u in usuarios.Values)
+        {
+            Console.WriteLine("ID: " + u.Id + " | Nome: " + u.Nome + " | CPF: " + u.Cpf + " | Nota: " + u.Nota);
         }
     }
 
-    static void MetodoContains()
+    static void MetodoAtualizar()
     {
-        Console.Write("Digite um número: ");
-        if (int.TryParse(Console.ReadLine(), out int num))
+        Console.Write("ID para atualizar: ");
+        Guid id;
+
+        if (!Guid.TryParse(Console.ReadLine(), out id))
         {
-            if (UsuarioInput.Contains(num))
-                Console.WriteLine("O número existe!");
-            else
-                Console.WriteLine("O número NÃO existe!");
+            Console.WriteLine("ID inválido!");
+            return;
         }
-        else
+
+        if (!usuarios.ContainsKey(id))
         {
-            Console.WriteLine("Entrada inválida!");
+            Console.WriteLine("Usuário não encontrado!");
+            return;
+        }
+
+        Console.Write("Novo nome: ");
+        string nome = Console.ReadLine() ?? "";
+
+        Console.Write("Novo CPF: ");
+        string cpf = Console.ReadLine() ?? "";
+
+        Console.Write("Nova Nota: ");
+        float nota;
+
+        if (!float.TryParse(Console.ReadLine(), out nota))
+        {
+            Console.WriteLine("Nota inválida!");
+            return;
+        }
+
+        usuarios[id] = new Usuario(nome, cpf, nota) { Id = id };
+
+        Console.WriteLine("Atualizado com sucesso!");
+    }
+
+    static void MetodoWhere()
+    {
+        var lista = usuarios.Values
+            .Where(u => u.Nota >= 60)
+            .OrderByDescending(u => u.Nota)
+            .ToList();
+
+        if (lista.Count == 0)
+        {
+            Console.WriteLine("Nenhum usuário com nota >= 60.");
+            return;
+        }
+
+        foreach (var u in lista)
+        {
+            Console.WriteLine("ID: " + u.Id + " | Nome: " + u.Nome + " | CPF: " + u.Cpf + " | Nota: " + u.Nota);
         }
     }
 
-    static void AtualizarUniao()
-    {
-        UniaoSet = new HashSet<int>(AutoInput);
-        UniaoSet.UnionWith(UsuarioInput);
-    }
-
-    static void MostrarUniao()
-    {
-        Console.WriteLine("União:");
-
-        foreach (var item in UniaoSet)
-        {
-            Console.Write(item + " ");
+    static void MetodoSelect(){
+        Console.Write("\nDigite o CPF para consulta: ");
+        string consulta = Console.ReadLine();
+        var consultar = usuarios
+        .Select(v => new{
+            Id = v.Value.Id,
+            Cpf = v.Value.Cpf,
+            Nome = v.Value.Nome,
+            Nota = v.Value.Nota,
+            Encontrado = v.Value.Cpf == consulta ? true:false 
+            
+        });
+        foreach(var item in consultar){
+            if(item.Encontrado)
+            
+            Console.WriteLine("ID: " + item.Id + " |  Nome:"  + item.Nome + " | CPF: " + item.Cpf + " | Nota: " + item.Nota);
         }
+        }
+}
+class Usuario
+{
+    public Guid Id { get; set; }
+    public string Nome;
+    public string Cpf;
+    public float Nota;
 
-        Console.WriteLine();
+    public Usuario(string nome, string cpf, float nota)
+    {
+        Id = Guid.NewGuid();
+        Nome = nome;
+        Cpf = cpf;
+        Nota = nota;
     }
 }
